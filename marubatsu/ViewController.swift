@@ -32,8 +32,9 @@ class ViewController: UIViewController {
     var square8:Bool? = nil
     var square9:Bool? = nil
     
-    var clear:Bool = false
+    var clear:Bool? = nil
 
+    var count:Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,49 +57,85 @@ class ViewController: UIViewController {
     }
 
     @IBAction func tap1(){
-        lab1.text = "◯"
-        square1 = true
-        check()
+        if square1 == nil {
+            lab1.text = "◯"
+            square1 = true
+            count++
+            aite()
+            check()
+        }
     }
     @IBAction func tap2(){
-        lab2.text = "◯"
-        square2 = true
-        check()
+        if square2 == nil {
+            lab2.text = "◯"
+            square2 = true
+            count++
+            aite()
+            check()
+        }
     }
     @IBAction func tap3(){
-        lab3.text = "◯"
-        square3 = true
-        check()
+        if square3 == nil {
+            lab3.text = "◯"
+            square3 = true
+            count++
+            aite()
+            check()
+        }
     }
     @IBAction func tap4(){
-        lab4.text = "◯"
-        square4 = true
-        check()
+        if square4 == nil {
+            lab4.text = "◯"
+            square4 = true
+            count++
+            aite()
+            check()
+        }
     }
     @IBAction func tap5(){
-        lab5.text = "◯"
-        square5 = true
-        check()
+        if square5 == nil {
+            lab5.text = "◯"
+            square5 = true
+            count++
+            aite()
+            check()
+        }
     }
     @IBAction func tap6(){
-        lab6.text = "◯"
-        square6 = true
-        check()
+        if square6 == nil {
+            lab6.text = "◯"
+            square6 = true
+            count++
+            aite()
+            check()
+        }
     }
     @IBAction func tap7(){
-        lab7.text = "◯"
-        square7 = true
-        check()
+        if square7 == nil {
+            lab7.text = "◯"
+            square7 = true
+            count++
+            aite()
+            check()
+        }
     }
     @IBAction func tap8(){
-        lab8.text = "◯"
-        square8 = true
-        check()
+        if square8 == nil {
+            lab8.text = "◯"
+            square8 = true
+            count++
+            aite()
+            check()
+        }
     }
     @IBAction func tap9(){
-        lab9.text = "◯"
-        square9 = true
-        check()
+        if square9 == nil {
+            lab9.text = "◯"
+            square9 = true
+            count++
+            aite()
+            check()
+        }
     }
 
     func check(){
@@ -121,8 +158,95 @@ class ViewController: UIViewController {
             clear = true
         }
         
+        if square1 == false && square2 == false && square3 == false {
+            clear = false
+        }else if square4 == false && square5 == false && square6 == false {
+            clear = false
+        }else if square7 == false && square8 == false && square9 == false {
+            clear = false
+        }else if square1 == false && square4 == false && square7 == false {
+            clear = false
+        }else if square2 == false && square5 == false && square8 == false {
+            clear = false
+        }else if square3 == false && square6 == false && square9 == false {
+            clear = false
+        }else if square1 == false && square5 == false && square9 == false {
+            clear = false
+        }else if square3 == false && square5 == false && square7 == false {
+            clear = false
+        }
+        
         if clear == true{
             lab.text = "win!"
+        }
+        if clear == false{
+            lab.text = "lose..."
+        }
+        
+    }
+    
+    func aite(){
+        
+        if count < 5 {
+            var a:Int = Int(arc4random_uniform(9)) + 1
+            
+            while a == 1 && square1 != nil{
+                a = Int(arc4random_uniform(10 - a) + a)
+            }
+            while a == 2 && square2 != nil{
+                a = Int(arc4random_uniform(10 - a) + a)
+            }
+            while a == 3 && square3 != nil{
+                a = Int(arc4random_uniform(10 - a) + a)
+            }
+            while a == 4 && square4 != nil{
+                a = Int(arc4random_uniform(10 - a) + a)
+            }
+            while a == 5 && square5 != nil{
+                a = Int(arc4random_uniform(10 - a) + a)
+            }
+            while a == 6 && square6 != nil{
+                a = Int(arc4random_uniform(10 - a) + a)
+            }
+            while a == 7 && square7 != nil{
+                a = Int(arc4random_uniform(10 - a) + a)
+            }
+            while a == 8 && square8 != nil{
+                a = Int(arc4random_uniform(10 - a) + a)
+            }
+            while a == 9 && square9 != nil{
+                aite()
+            }
+            NSLog("a = %d",a)
+            
+            if a == 1{
+                square1 = false
+                lab1.text = "×"
+            }else if a == 2{
+                square2 = false
+                lab2.text = "×"
+            }else if a == 3{
+                square3 = false
+                lab3.text = "×"
+            }else if a == 4{
+                square4 = false
+                lab4.text = "×"
+            }else if a == 5{
+                square5 = false
+                lab5.text = "×"
+            }else if a == 6{
+                square6 = false
+                lab6.text = "×"
+            }else if a == 7{
+                square7 = false
+                lab7.text = "×"
+            }else if a == 8{
+                square8 = false
+                lab8.text = "×"
+            }else if a == 9{
+                square9 = false
+                lab9.text = "×"
+            }
         }
         
     }

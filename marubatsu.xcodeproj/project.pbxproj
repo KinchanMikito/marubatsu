@@ -13,6 +13,7 @@
 		EA1290D71B0F5AD700C95C12 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA1290D61B0F5AD700C95C12 /* Images.xcassets */; };
 		EA1290DA1B0F5AD700C95C12 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1290D81B0F5AD700C95C12 /* LaunchScreen.xib */; };
 		EA1290E61B0F5AD700C95C12 /* marubatsuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1290E51B0F5AD700C95C12 /* marubatsuTests.swift */; };
+		EA1FE5FC1B1008F100BB8A6B /* cardFuchi.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1FE5FB1B1008F100BB8A6B /* cardFuchi.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		EA1290DF1B0F5AD700C95C12 /* marubatsuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = marubatsuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA1290E41B0F5AD700C95C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA1290E51B0F5AD700C95C12 /* marubatsuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marubatsuTests.swift; sourceTree = "<group>"; };
+		EA1FE5FB1B1008F100BB8A6B /* cardFuchi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardFuchi.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				EA1290CF1B0F5AD700C95C12 /* AppDelegate.swift */,
 				EA1290D11B0F5AD700C95C12 /* ViewController.swift */,
 				EA1290D31B0F5AD700C95C12 /* Main.storyboard */,
+				EA1FE5FB1B1008F100BB8A6B /* cardFuchi.png */,
 				EA1290D61B0F5AD700C95C12 /* Images.xcassets */,
 				EA1290D81B0F5AD700C95C12 /* LaunchScreen.xib */,
 				EA1290CD1B0F5AD700C95C12 /* Supporting Files */,
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA1290D51B0F5AD700C95C12 /* Main.storyboard in Resources */,
+				EA1FE5FC1B1008F100BB8A6B /* cardFuchi.png in Resources */,
 				EA1290DA1B0F5AD700C95C12 /* LaunchScreen.xib in Resources */,
 				EA1290D71B0F5AD700C95C12 /* Images.xcassets in Resources */,
 			);
@@ -405,6 +409,7 @@
 				EA1290EB1B0F5AD700C95C12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA1290EC1B0F5AD700C95C12 /* Build configuration list for PBXNativeTarget "marubatsuTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +418,7 @@
 				EA1290EE1B0F5AD700C95C12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
