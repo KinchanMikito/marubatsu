@@ -41,16 +41,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        lab1.text = nil
-        lab2.text = nil
-        lab3.text = nil
-        lab4.text = nil
-        lab5.text = nil
-        lab6.text = nil
-        lab7.text = nil
-        lab8.text = nil
-        lab9.text = nil
-
+        mokkai()
     }
 
     override func didReceiveMemoryWarning() {
@@ -189,6 +180,12 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func tapMokkai(){
+        
+        mokkai()
+        
+    }
+    
     func aite(){
         
         if count < 5 {
@@ -253,8 +250,6 @@ class ViewController: UIViewController {
             }
         }
     }
-
-
     
     func batu(){
         
@@ -387,6 +382,33 @@ class ViewController: UIViewController {
         }else{
             return Int(arc4random_uniform(9)) + 1
         }
+    }
+    
+    func mokkai(){
+        
+        lab1.text = nil
+        lab2.text = nil
+        lab3.text = nil
+        lab4.text = nil
+        lab5.text = nil
+        lab6.text = nil
+        lab7.text = nil
+        lab8.text = nil
+        lab9.text = nil
+        
+        square1 = nil
+        square2 = nil
+        square3 = nil
+        square4 = nil
+        square5 = nil
+        square6 = nil
+        square7 = nil
+        square8 = nil
+        square9 = nil
+        
+        lab.text = nil
+
+        
     }
 }
 
