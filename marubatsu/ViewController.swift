@@ -42,7 +42,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         mokkai()
-    }
+        
+        
+        
+}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -50,7 +53,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func tap1(){
-        if square1 == nil {
+        if square1 == nil && clear == nil{
             lab1.text = "◯"
             square1 = true
             count++
@@ -59,7 +62,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func tap2(){
-        if square2 == nil {
+        if square2 == nil && clear == nil{
             lab2.text = "◯"
             square2 = true
             count++
@@ -68,7 +71,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func tap3(){
-        if square3 == nil {
+        if square3 == nil && clear == nil{
             lab3.text = "◯"
             square3 = true
             count++
@@ -77,7 +80,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func tap4(){
-        if square4 == nil {
+        if square4 == nil && clear == nil{
             lab4.text = "◯"
             square4 = true
             count++
@@ -86,7 +89,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func tap5(){
-        if square5 == nil {
+        if square5 == nil && clear == nil{
             lab5.text = "◯"
             square5 = true
             count++
@@ -95,7 +98,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func tap6(){
-        if square6 == nil {
+        if square6 == nil && clear == nil{
             lab6.text = "◯"
             square6 = true
             count++
@@ -104,7 +107,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func tap7(){
-        if square7 == nil {
+        if square7 == nil && clear == nil{
             lab7.text = "◯"
             square7 = true
             count++
@@ -113,7 +116,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func tap8(){
-        if square8 == nil {
+        if square8 == nil && clear == nil{
             lab8.text = "◯"
             square8 = true
             count++
@@ -122,7 +125,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func tap9(){
-        if square9 == nil {
+        if square9 == nil && clear == nil{
             lab9.text = "◯"
             square9 = true
             count++
@@ -379,6 +382,8 @@ class ViewController: UIViewController {
             return 3
         }else if square3 == true && square7 == true && square5 == nil{
             return 5
+        }else if square5 == nil{
+            return 5
         }else{
             return Int(arc4random_uniform(9)) + 1
         }
@@ -407,7 +412,10 @@ class ViewController: UIViewController {
         square9 = nil
         
         lab.text = nil
+        
+        count = 0
 
+        clear = nil
         
     }
 }
