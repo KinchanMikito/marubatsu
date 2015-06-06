@@ -14,6 +14,7 @@
 		EA1290DA1B0F5AD700C95C12 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1290D81B0F5AD700C95C12 /* LaunchScreen.xib */; };
 		EA1290E61B0F5AD700C95C12 /* marubatsuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1290E51B0F5AD700C95C12 /* marubatsuTests.swift */; };
 		EA1FE5FC1B1008F100BB8A6B /* cardFuchi.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1FE5FB1B1008F100BB8A6B /* cardFuchi.png */; };
+		EA8E4AA91B22D86500F519DB /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8E4AA81B22D86500F519DB /* TopViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		EA1290E41B0F5AD700C95C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA1290E51B0F5AD700C95C12 /* marubatsuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marubatsuTests.swift; sourceTree = "<group>"; };
 		EA1FE5FB1B1008F100BB8A6B /* cardFuchi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardFuchi.png; sourceTree = "<group>"; };
+		EA8E4AA81B22D86500F519DB /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				EA1290CF1B0F5AD700C95C12 /* AppDelegate.swift */,
 				EA1290D11B0F5AD700C95C12 /* ViewController.swift */,
+				EA8E4AA81B22D86500F519DB /* TopViewController.swift */,
 				EA1290D31B0F5AD700C95C12 /* Main.storyboard */,
 				EA1FE5FB1B1008F100BB8A6B /* cardFuchi.png */,
 				EA1290D61B0F5AD700C95C12 /* Images.xcassets */,
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA8E4AA91B22D86500F519DB /* TopViewController.swift in Sources */,
 				EA1290D21B0F5AD700C95C12 /* ViewController.swift in Sources */,
 				EA1290D01B0F5AD700C95C12 /* AppDelegate.swift in Sources */,
 			);

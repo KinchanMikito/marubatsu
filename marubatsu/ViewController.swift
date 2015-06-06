@@ -8,6 +8,17 @@
 
 import UIKit
 
+let ud = NSUserDefaults.standardUserDefaults()
+
+var no1:Int = ud.integerForKey("zero")
+var no2:Int = ud.integerForKey("one")
+var no3:Int = ud.integerForKey("two")
+var no4:Int = ud.integerForKey("three")
+var no5:Int = ud.integerForKey("four")
+
+var wins:Int = 0
+
+
 class ViewController: UIViewController {
     
     @IBOutlet var lab1:UILabel!
@@ -22,29 +33,26 @@ class ViewController: UIViewController {
     
     @IBOutlet var lab:UILabel!
     
-    var square1:Bool? = nil
-    var square2:Bool? = nil
-    var square3:Bool? = nil
-    var square4:Bool? = nil
-    var square5:Bool? = nil
-    var square6:Bool? = nil
-    var square7:Bool? = nil
-    var square8:Bool? = nil
-    var square9:Bool? = nil
+    @IBOutlet var winsLab:UILabel!
+    
+    var squares:[Bool?] = [nil,nil,nil,nil,nil,nil,nil,nil,nil]
     
     var clear:Bool? = nil
 
     var count:Int = 0
     
     var a:Int = 0
+    
+    var hajikko:[Int] = [0,2,6,8]
+    
+    var highscores = [no1,no2,no3,no4,no5]
+    
+    @IBOutlet var mokkaiButton:UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         mokkai()
-        
-        
-        
 }
 
     override func didReceiveMemoryWarning() {
@@ -53,81 +61,81 @@ class ViewController: UIViewController {
     }
 
     @IBAction func tap1(){
-        if square1 == nil && clear == nil{
+        if squares[0] == nil && clear == nil{
             lab1.text = "◯"
-            square1 = true
+            squares[0] = true
             count++
             aite()
             check()
         }
     }
     @IBAction func tap2(){
-        if square2 == nil && clear == nil{
+        if squares[1] == nil && clear == nil{
             lab2.text = "◯"
-            square2 = true
+            squares[1] = true
             count++
             aite()
             check()
         }
     }
     @IBAction func tap3(){
-        if square3 == nil && clear == nil{
+        if squares[2] == nil && clear == nil{
             lab3.text = "◯"
-            square3 = true
+            squares[2] = true
             count++
             aite()
             check()
         }
     }
     @IBAction func tap4(){
-        if square4 == nil && clear == nil{
+        if squares[3] == nil && clear == nil{
             lab4.text = "◯"
-            square4 = true
+            squares[3] = true
             count++
             aite()
             check()
         }
     }
     @IBAction func tap5(){
-        if square5 == nil && clear == nil{
+        if squares[4] == nil && clear == nil{
             lab5.text = "◯"
-            square5 = true
+            squares[4] = true
             count++
             aite()
             check()
         }
     }
     @IBAction func tap6(){
-        if square6 == nil && clear == nil{
+        if squares[5] == nil && clear == nil{
             lab6.text = "◯"
-            square6 = true
+            squares[5] = true
             count++
             aite()
             check()
         }
     }
     @IBAction func tap7(){
-        if square7 == nil && clear == nil{
+        if squares[6] == nil && clear == nil{
             lab7.text = "◯"
-            square7 = true
+            squares[6] = true
             count++
             aite()
             check()
         }
     }
     @IBAction func tap8(){
-        if square8 == nil && clear == nil{
+        if squares[7] == nil && clear == nil{
             lab8.text = "◯"
-            square8 = true
+            squares[7] = true
             count++
             aite()
             check()
         }
     }
     @IBAction func tap9(){
-        if square9 == nil && clear == nil{
+        if squares[8] == nil && clear == nil{
             lab9.text = "◯"
-            square9 = true
+            squares[8] = true
             count++
             aite()
             check()
@@ -136,49 +144,78 @@ class ViewController: UIViewController {
 
     func check(){
         
+        for var i = 0; i <= 2; i++ {
+            
+            if squares[i*3] == false && squares[i*3 + 1] == false && squares[i*3 + 2] == false{ //横-相手
+                clear = false
+                
+            }
+            if squares[i] == false && squares[i+3] == false && squares[i+6] == false{ //縦-相手
+                clear = false
+            }
+            if squares[i*3] == true && squares[i*3 + 1] == true && squares[i*3 + 2] == true{ //横-自分
+                clear = true
+            }
+            if squares[i] == true && squares[i+3] == true && squares[i+6] == true{ //縦-自分
+                clear = true
+            }
+            
+        }
         
         
-        if square1 == false && square2 == false && square3 == false {
+        if squares[0] == false && squares[4] == false && squares[8] == false {//ナナメ-相手
             clear = false
-        }else if square4 == false && square5 == false && square6 == false {
-            clear = false
-        }else if square7 == false && square8 == false && square9 == false {
-            clear = false
-        }else if square1 == false && square4 == false && square7 == false {
-            clear = false
-        }else if square2 == false && square5 == false && square8 == false {
-            clear = false
-        }else if square3 == false && square6 == false && square9 == false {
-            clear = false
-        }else if square1 == false && square5 == false && square9 == false {
-            clear = false
-        }else if square3 == false && square5 == false && square7 == false {
+        }else if squares[2] == false && squares[4] == false && squares[6] == false {//ナナメ-相手
             clear = false
         }
-        if square1 == true && square2 == true && square3 == true {
+        if squares[0] == true && squares[4] == true && squares[8] == true {//ナナメ-自分
             clear = true
-        }else if square4 == true && square5 == true && square6 == true {
-            clear = true
-        }else if square7 == true && square8 == true && square9 == true {
-            clear = true
-        }else if square1 == true && square4 == true && square7 == true {
-            clear = true
-        }else if square2 == true && square5 == true && square8 == true {
-            clear = true
-        }else if square3 == true && square6 == true && square9 == true {
-            clear = true
-        }else if square1 == true && square5 == true && square9 == true {
-            clear = true
-        }else if square3 == true && square5 == true && square7 == true {
+        }else if squares[2] == true && squares[4] == true && squares[6] == true {//ナナメ-自分
             clear = true
         }
+        
+        
         if clear == false{
             lab.text = "lose..."
+            mokkaiButton.hidden = false
+            ranking(wins)
+            wins = 0
+            winsLab.text = String("\(wins)連勝中!")
         }
         
         if clear == true{
             lab.text = "win!"
+            mokkaiButton.hidden = false
+            if a == 0{
+                lab1.text = nil
+            }else if a == 1{
+                lab2.text = nil
+            }else if a == 2{
+                lab3.text = nil
+            }else if a == 3{
+                lab4.text = nil
+            }else if a == 4{
+                lab5.text = nil
+            }else if a == 5{
+                lab6.text = nil
+            }else if a == 6{
+                lab7.text = nil
+            }else if a == 7{
+                lab8.text = nil
+            }else if a == 8{
+                lab9.text = nil
+            }
+            wins++
+            winsLab.text = String("\(wins)連勝中!")
+        }else if count == 5{
+            lab.text = "draw"
+            mokkaiButton.hidden = false
+            ranking(wins)
+            wins = 0
+            winsLab.text = String("\(wins)連勝中!")
         }
+        
+        
         
         
     }
@@ -193,200 +230,141 @@ class ViewController: UIViewController {
         
         if count < 5 {
             a = hantei()
+            while a == 0 && squares[a] != nil{
+                a = hajikko[Int(arc4random_uniform(UInt32(hajikko.count)))]
+            }
+            while a == 2 && squares[a] != nil{
+                a = hajikko[Int(arc4random_uniform(UInt32(hajikko.count)))]
+            }
+            while a == 6 && squares[a] != nil{
+                a = hajikko[Int(arc4random_uniform(UInt32(hajikko.count)))]
+            }
+            while a == 8 && squares[a] != nil{
+                a = hajikko[Int(arc4random_uniform(UInt32(hajikko.count)))]
+            }
             
-            while a == 1 && square1 != nil{
-                a = Int(arc4random_uniform(9) + 1)
+            
+            while a == 0 && squares[a] != nil{
+                a = Int(arc4random_uniform(8)) + 1
             }
-            while a == 2 && square2 != nil{
-                a = Int(arc4random_uniform(8) + 2)
+            while a == 1 && squares[a] != nil{
+                a = Int(arc4random_uniform(7)) + 2
             }
-            while a == 3 && square3 != nil{
-                a = Int(arc4random_uniform(7) + 3)
+            while a == 2 && squares[a] != nil{
+                a = Int(arc4random_uniform(6)) + 3
             }
-            while a == 4 && square4 != nil{
-                a = Int(arc4random_uniform(6) + 4)
+            while a == 3 && squares[a] != nil{
+                a = Int(arc4random_uniform(5)) + 4
             }
-            while a == 5 && square5 != nil{
-                a = Int(arc4random_uniform(5) + 5)
+            while a == 4 && squares[a] != nil{
+                a = Int(arc4random_uniform(4)) + 5
             }
-            while a == 6 && square6 != nil{
-                a = Int(arc4random_uniform(4) + 6)
+            while a == 5 && squares[a] != nil{
+                a = Int(arc4random_uniform(3)) + 6
             }
-            while a == 7 && square7 != nil{
-                a = Int(arc4random_uniform(3) + 7)
+            while a == 6 && squares[a] != nil{
+                a = Int(arc4random_uniform(2)) + 7
             }
-            while a == 8 && square8 != nil{
-                a = Int(arc4random_uniform(2) + 8)
+            while a == 7 && squares[a] != nil{
+                a = 8
             }
-            while a == 9 && square9 != nil{
-                batu()
+            
+            while a == 8 && squares[8] != nil {
+                aite()
             }
             NSLog("a = %d",a)
             
-            if a == 1{
-                square1 = false
+            squares[a] = false
+            
+            if a == 0{
                 lab1.text = "×"
-            }else if a == 2{
-                square2 = false
+            }else if a == 1{
                 lab2.text = "×"
-            }else if a == 3{
-                square3 = false
+            }else if a == 2{
                 lab3.text = "×"
-            }else if a == 4{
-                square4 = false
+            }else if a == 3{
                 lab4.text = "×"
-            }else if a == 5{
-                square5 = false
+            }else if a == 4{
                 lab5.text = "×"
-            }else if a == 6{
-                square6 = false
+            }else if a == 5{
                 lab6.text = "×"
-            }else if a == 7{
-                square7 = false
+            }else if a == 6{
                 lab7.text = "×"
-            }else if a == 8{
-                square8 = false
+            }else if a == 7{
                 lab8.text = "×"
-            }else if a == 9{
-                square9 = false
+            }else if a == 8{
                 lab9.text = "×"
             }
         }
     }
     
-    func batu(){
-        
-        while a == 1 && square1 != nil{
-            a = Int(arc4random_uniform(9) + 1)
-        }
-        while a == 2 && square2 != nil{
-            a = Int(arc4random_uniform(8) + 2)
-        }
-        while a == 3 && square3 != nil{
-            a = Int(arc4random_uniform(7) + 3)
-        }
-        while a == 4 && square4 != nil{
-            a = Int(arc4random_uniform(6) + 4)
-        }
-        while a == 5 && square5 != nil{
-            a = Int(arc4random_uniform(5) + 5)
-        }
-        while a == 6 && square6 != nil{
-            a = Int(arc4random_uniform(4) + 6)
-        }
-        while a == 7 && square7 != nil{
-            a = Int(arc4random_uniform(3) + 7)
-        }
-        while a == 8 && square8 != nil{
-            a = Int(arc4random_uniform(2) + 8)
-        }
-        while a == 9 && square9 != nil{
-            aite()
-        }
-    }
-    
     func hantei() -> Int {
-        if square1 == false && square2 == false && square3 == nil{
-            return 3
-        }else if square3 == false && square2 == false && square1 == nil{
-            return 1
-        }else if square1 == false && square3 == false && square2 == nil{
-            return 2
-        }else if square4 == false && square5 == false && square6 == nil{
-            return 6
-        }else if square6 == false && square5 == false && square4 == nil{
-            return 4
-        }else if square4 == false && square6 == false && square5 == nil{
-            return 5
-        }else if square7 == false && square7 == false && square9 == nil{
-            return 9
-        }else if square9 == false && square7 == false && square7 == nil{
-            return 7
-        }else if square7 == false && square9 == false && square8 == nil{
-            return 8
-        }else if square1 == false && square4 == false && square7 == nil{
-            return 7
-        }else if square7 == false && square4 == false && square1 == nil{
-            return 1
-        }else if square1 == false && square7 == false && square4 == nil{
-            return 4
-        }else if square2 == false && square5 == false && square8 == nil{
-            return 8
-        }else if square8 == false && square5 == false && square2 == nil{
-            return 2
-        }else if square2 == false && square8 == false && square5 == nil{
-            return 5
-        }else if square3 == false && square6 == false && square9 == nil{
-            return 9
-        }else if square9 == false && square6 == false && square3 == nil{
-            return 3
-        }else if square3 == false && square9 == false && square6 == nil{
-            return 6
-        }else if square1 == false && square5 == false && square9 == nil{
-            return 9
-        }else if square9 == false && square5 == false && square1 == nil{
-            return 1
-        }else if square1 == false && square9 == false && square5 == nil{
-            return 5
-        }else if square3 == false && square5 == false && square7 == nil{
-            return 7
-        }else if square7 == false && square5 == false && square3 == nil{
-            return 3
-        }else if square3 == false && square7 == false && square5 == nil{
-            return 5
-        }else if square1 == true && square2 == true && square3 == nil{
-            return 3
-        }else if square3 == true && square2 == true && square1 == nil{
-            return 1
-        }else if square1 == true && square3 == true && square2 == nil{
-            return 2
-        }else if square4 == true && square5 == true && square6 == nil{
-            return 6
-        }else if square6 == true && square5 == true && square4 == nil{
-            return 4
-        }else if square4 == true && square6 == true && square5 == nil{
-            return 5
-        }else if square7 == true && square7 == true && square9 == nil{
-            return 9
-        }else if square9 == true && square7 == true && square7 == nil{
-            return 7
-        }else if square7 == true && square9 == true && square8 == nil{
-            return 8
-        }else if square1 == true && square4 == true && square7 == nil{
-            return 7
-        }else if square7 == true && square4 == true && square1 == nil{
-            return 1
-        }else if square1 == true && square7 == true && square4 == nil{
-            return 4
-        }else if square2 == true && square5 == true && square8 == nil{
-            return 8
-        }else if square8 == true && square5 == true && square2 == nil{
-            return 2
-        }else if square2 == true && square8 == true && square5 == nil{
-            return 5
-        }else if square3 == true && square6 == true && square9 == nil{
-            return 9
-        }else if square9 == true && square6 == true && square3 == nil{
-            return 3
-        }else if square3 == true && square9 == true && square6 == nil{
-            return 6
-        }else if square1 == true && square5 == true && square9 == nil{
-            return 9
-        }else if square9 == true && square5 == true && square1 == nil{
-            return 1
-        }else if square1 == true && square9 == true && square5 == nil{
-            return 5
-        }else if square3 == true && square5 == true && square7 == nil{
-            return 7
-        }else if square7 == true && square5 == true && square3 == nil{
-            return 3
-        }else if square3 == true && square7 == true && square5 == nil{
-            return 5
-        }else if square5 == nil{
-            return 5
-        }else{
-            return Int(arc4random_uniform(9)) + 1
+        
+        for var i = 0; i <= 2; i++ {
+            
+            if squares[i*3] == false && squares[i*3 + 1] == false && squares[i*3 + 2] == nil{
+                return i*3 + 2
+            }else if squares[i*3] == false && squares[i*3 + 2] == false && squares[i*3 + 1] == nil{
+                return i*3 + 1
+            }else if squares[i*3 + 1] == false && squares[i*3 + 2] == false && squares[i*3] == nil{
+                return i*3
+            }else if squares[i] == false && squares[i+3] == false && squares[i+6] == nil{
+                return i+6
+            }else if squares[i] == false && squares[i+6] == false && squares[i+3] == nil{
+                return i+3
+            }else if squares[i+6] == false && squares[i+3] == false && squares[i] == nil{
+                return i
+            }else if squares[0] == false && squares[4] == false && squares[8] == nil{
+                return 8
+            }else if squares[0] == false && squares[8] == false && squares[4] == nil{
+                return 4
+            }else if squares[8] == false && squares[4] == false && squares[0] == nil{
+                return 0
+            }else if squares[2] == false && squares[4] == false && squares[6] == nil{
+                return 6
+            }else if squares[2] == false && squares[6] == false && squares[4] == nil{
+                return 4
+            }else if squares[6] == false && squares[4] == false && squares[2] == nil{
+                return 2
+            }
         }
+        
+        for var i = 0; i <= 2; i++ {
+            if squares[i*3] == true && squares[i*3 + 1] == true && squares[i*3 + 2] == nil{
+                return i*3 + 2
+            }else if squares[i*3] == true && squares[i*3 + 2] == true && squares[i*3 + 1] == nil{
+                return i*3 + 1
+            }else if squares[i*3 + 1] == true && squares[i*3 + 2] == true && squares[i*3] == nil{
+                return i*3
+            }else if squares[i] == true && squares[i+3] == true && squares[i+6] == nil{
+                return i+6
+            }else if squares[i] == true && squares[i+6] == true && squares[i+3] == nil{
+                return i+3
+            }else if squares[i+6] == true && squares[i+3] == true && squares[i] == nil{
+                return i
+            }else if squares[0] == true && squares[4] == true && squares[8] == nil{
+                return 8
+            }else if squares[0] == true && squares[8] == false && squares[4] == nil{
+                return 4
+            }else if squares[8] == true && squares[4] == true && squares[0] == nil{
+                return 0
+            }else if squares[2] == true && squares[4] == true && squares[6] == nil{
+                return 6
+            }else if squares[2] == true && squares[6] == true && squares[4] == nil{
+                return 4
+            }else if squares[6] == true && squares[4] == true && squares[2] == nil{
+                return 2
+            }
+        }
+        
+        if squares[4] == nil{
+            
+            return 4
+            
+        }
+        
+            return hajikko[Int(arc4random_uniform(UInt32(hajikko.count)))]
+        
     }
     
     func mokkai(){
@@ -401,21 +379,55 @@ class ViewController: UIViewController {
         lab8.text = nil
         lab9.text = nil
         
-        square1 = nil
-        square2 = nil
-        square3 = nil
-        square4 = nil
-        square5 = nil
-        square6 = nil
-        square7 = nil
-        square8 = nil
-        square9 = nil
+        for var i = 0; i < 9; i++ {
+            
+            squares[i] = nil
+            
+        }
         
         lab.text = nil
         
         count = 0
 
         clear = nil
+        
+        mokkaiButton.hidden = true
+        
+        winsLab.text = String("\(wins)連勝中!")
+        
+    }
+    
+    func ranking(score:Int){
+        
+        for var i = 0; i < 5; i++ {
+            
+            if highscores[i] < score{
+                
+                for var j = 4; j > i; j-- {
+                    
+                    highscores[j] = highscores[j - 1]
+                    
+                }
+                
+                highscores[i] = score
+                
+                no1 = highscores[0]
+                no2 = highscores[1]
+                no3 = highscores[2]
+                no4 = highscores[3]
+                no5 = highscores[4]
+                
+                ud.setInteger(no1, forKey: "zero")
+                ud.setInteger(no2, forKey: "one")
+                ud.setInteger(no3, forKey: "two")
+                ud.setInteger(no4, forKey: "three")
+                ud.setInteger(no5, forKey: "four")
+                
+                break
+                
+            }
+            
+        }
         
     }
 }
