@@ -45,6 +45,8 @@ class ViewController: UIViewController {
     
     var hajikko:[Int] = [0,2,6,8]
     
+    var aida:[Int] = [1,3,5,7]
+    
     var highscores = [no1,no2,no3,no4,no5]
     
     @IBOutlet var mokkaiButton:UIButton!
@@ -186,23 +188,23 @@ class ViewController: UIViewController {
         if clear == true{
             lab.text = "win!"
             mokkaiButton.hidden = false
-            if a == 0{
+            if a == 0 && count != 5{
                 lab1.text = nil
-            }else if a == 1{
+            }else if a == 1 && count != 5{
                 lab2.text = nil
-            }else if a == 2{
+            }else if a == 2 && count != 5{
                 lab3.text = nil
-            }else if a == 3{
+            }else if a == 3 && count != 5{
                 lab4.text = nil
-            }else if a == 4{
+            }else if a == 4 && count != 5{
                 lab5.text = nil
-            }else if a == 5{
+            }else if a == 5 && count != 5{
                 lab6.text = nil
-            }else if a == 6{
+            }else if a == 6 && count != 5{
                 lab7.text = nil
-            }else if a == 7{
+            }else if a == 7 && count != 5{
                 lab8.text = nil
-            }else if a == 8{
+            }else if a == 8 && count != 5{
                 lab9.text = nil
             }
             wins++
@@ -272,7 +274,7 @@ class ViewController: UIViewController {
             while a == 8 && squares[8] != nil {
                 aite()
             }
-            NSLog("a = %d",a)
+            
             
             squares[a] = false
             
@@ -362,8 +364,27 @@ class ViewController: UIViewController {
             return 4
             
         }
+        if squares[2] == true && squares[6] == true && squares[4] == false{
+            
+            return aida[Int(arc4random_uniform(UInt32(aida.count)))]
+            
+        }else if squares[0] == true && squares[8] == true && squares[4] == false{
+            
+            return aida[Int(arc4random_uniform(UInt32(aida.count)))]
+            
+        }
         
-            return hajikko[Int(arc4random_uniform(UInt32(hajikko.count)))]
+        if squares[1] == true && squares[3] == true && squares[0] == nil{
+            return 0
+        }else if squares[1] == true && squares[5] == true && squares[2] == nil{
+            return 2
+        }else if squares[3] == true && squares[7] == true && squares[6] == nil{
+            return 6
+        }else if squares[7] == true && squares[5] == true && squares[8] == nil{
+            return 8
+        }
+        
+        return hajikko[Int(arc4random_uniform(UInt32(hajikko.count)))]
         
     }
     
