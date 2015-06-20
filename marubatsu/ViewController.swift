@@ -55,6 +55,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         mokkai()
+        ud.setInteger(0, forKey: "zero")
+        ud.setInteger(0, forKey: "one")
+        ud.setInteger(0, forKey: "two")
+        ud.setInteger(0, forKey: "three")
+        ud.setInteger(0, forKey: "four")
 }
 
     override func didReceiveMemoryWarning() {
@@ -383,6 +388,26 @@ class ViewController: UIViewController {
         }else if squares[7] == true && squares[5] == true && squares[8] == nil{
             return 8
         }
+        
+        if squares[1] == true && squares[6] == true && squares[0] == nil{
+            return 0
+        }else if squares[1] == true && squares[8] == true && squares[2] == nil{
+            return 2
+        }else if squares[7] == true && squares[0] == true && squares[6] == nil{
+            return 6
+        }else if squares[7] == true && squares[2] == true && squares[8] == nil{
+            return 8
+        }else if squares[3] == true && squares[2] == true && squares[0] == nil{
+            return 0
+        }else if squares[3] == true && squares[8] == true && squares[2] == nil{
+            return 2
+        }else if squares[5] == true && squares[0] == true && squares[6] == nil{
+            return 6
+        }else if squares[5] == true && squares[6] == true && squares[8] == nil{
+            return 8
+        }
+        
+        
         
         return hajikko[Int(arc4random_uniform(UInt32(hajikko.count)))]
         
