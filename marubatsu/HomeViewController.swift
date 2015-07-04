@@ -2,41 +2,39 @@
 //  HomeViewController.swift
 //  marubatsu
 //
-//  Created by 金森幹斗 on 2015/05/25.
+//  Created by 金森幹斗 on 2015/07/04.
 //  Copyright (c) 2015年 Mikito Kanamori. All rights reserved.
 //
+import GoogleMobileAds
 
 import UIKit
 
-var sente:Bool!
-
-class HomeViewController: UIViewController {
-    
-    
+class HomeViewController: UIViewController,GADBannerViewDelegate, GADInterstitialDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func tapSente(){
+        NSLog("Google Mobile Ads SDK version: %@", GADRequest.sdkVersion())
         
-        sente = true
+        let bannerView:GADBannerView = getAdBannerView()
+        self.view.addSubview(bannerView)
         
     }
     
-    @IBAction func tapGote(){
+    private func getAdBannerView() -> GADBannerView {
+        var bannerView: GADBannerView = GADBannerView()
+        bannerView = GADBannerView(adSize:kGADAdSizeBanner)
+        bannerView.frame.size = CGSizeMake(self.view.frame.width, bannerView.frame.height)
+        bannerView.frame.origin = CGPointMake(0, self.view.frame.size.height - bannerView.frame.height)
+        bannerView.adUnitID = "ca-app-pub-7292261742464348/3145992317" // Enter Ad's ID here
+        bannerView.delegate = self
+        bannerView.rootViewController = self
         
-        sente = false
-        
+        var request:GADRequest = GADRequest()
+//        request.testDevices = [GAD_SIMULATOR_ID]
+       bannerView.loadRequest(request)
+//        
+        return bannerView
     }
     
 

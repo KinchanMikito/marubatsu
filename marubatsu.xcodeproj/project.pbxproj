@@ -14,7 +14,20 @@
 		EA1290DA1B0F5AD700C95C12 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1290D81B0F5AD700C95C12 /* LaunchScreen.xib */; };
 		EA1290E61B0F5AD700C95C12 /* marubatsuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1290E51B0F5AD700C95C12 /* marubatsuTests.swift */; };
 		EA1FE5FC1B1008F100BB8A6B /* cardFuchi.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1FE5FB1B1008F100BB8A6B /* cardFuchi.png */; };
-		EA8E4AA91B22D86500F519DB /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8E4AA81B22D86500F519DB /* TopViewController.swift */; };
+		EA422C4A1B47B38D0008C87E /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C491B47B38D0008C87E /* AdSupport.framework */; };
+		EA422C4C1B47B39B0008C87E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C4B1B47B39B0008C87E /* AudioToolbox.framework */; };
+		EA422C4E1B47B3A70008C87E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C4D1B47B3A70008C87E /* AVFoundation.framework */; };
+		EA422C501B47B3B50008C87E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C4F1B47B3B50008C87E /* CoreGraphics.framework */; };
+		EA422C521B47B3C90008C87E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C511B47B3C90008C87E /* CoreTelephony.framework */; };
+		EA422C541B47B3D70008C87E /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C531B47B3D70008C87E /* EventKit.framework */; };
+		EA422C561B47B3E20008C87E /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C551B47B3E20008C87E /* EventKitUI.framework */; };
+		EA422C581B47B3ED0008C87E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C571B47B3ED0008C87E /* MessageUI.framework */; };
+		EA422C5A1B47B3FA0008C87E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C591B47B3FA0008C87E /* StoreKit.framework */; };
+		EA422C5C1B47B4070008C87E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C5B1B47B4070008C87E /* SystemConfiguration.framework */; };
+		EA422C5E1B47B4E90008C87E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA422C5D1B47B4E90008C87E /* HomeViewController.swift */; };
+		EA422C611B47B9D10008C87E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C601B47B9D10008C87E /* GoogleMobileAds.framework */; };
+		EA79BFF61B3D0586002CBAFF /* vsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA79BFF51B3D0586002CBAFF /* vsViewController.swift */; };
+		EAE1BFDF1B353FD20059DFFD /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE1BFDE1B353FD20059DFFD /* RankingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +52,21 @@
 		EA1290E41B0F5AD700C95C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA1290E51B0F5AD700C95C12 /* marubatsuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marubatsuTests.swift; sourceTree = "<group>"; };
 		EA1FE5FB1B1008F100BB8A6B /* cardFuchi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardFuchi.png; sourceTree = "<group>"; };
-		EA8E4AA81B22D86500F519DB /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		EA422C491B47B38D0008C87E /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		EA422C4B1B47B39B0008C87E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		EA422C4D1B47B3A70008C87E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EA422C4F1B47B3B50008C87E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EA422C511B47B3C90008C87E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		EA422C531B47B3D70008C87E /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		EA422C551B47B3E20008C87E /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		EA422C571B47B3ED0008C87E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		EA422C591B47B3FA0008C87E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		EA422C5B1B47B4070008C87E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		EA422C5D1B47B4E90008C87E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EA422C5F1B47B6980008C87E /* AdMob-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AdMob-Bridging-Header.h"; sourceTree = "<group>"; };
+		EA422C601B47B9D10008C87E /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		EA79BFF51B3D0586002CBAFF /* vsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = vsViewController.swift; sourceTree = "<group>"; };
+		EAE1BFDE1B353FD20059DFFD /* RankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +74,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA422C5C1B47B4070008C87E /* SystemConfiguration.framework in Frameworks */,
+				EA422C5A1B47B3FA0008C87E /* StoreKit.framework in Frameworks */,
+				EA422C581B47B3ED0008C87E /* MessageUI.framework in Frameworks */,
+				EA422C611B47B9D10008C87E /* GoogleMobileAds.framework in Frameworks */,
+				EA422C561B47B3E20008C87E /* EventKitUI.framework in Frameworks */,
+				EA422C541B47B3D70008C87E /* EventKit.framework in Frameworks */,
+				EA422C521B47B3C90008C87E /* CoreTelephony.framework in Frameworks */,
+				EA422C501B47B3B50008C87E /* CoreGraphics.framework in Frameworks */,
+				EA422C4E1B47B3A70008C87E /* AVFoundation.framework in Frameworks */,
+				EA422C4C1B47B39B0008C87E /* AudioToolbox.framework in Frameworks */,
+				EA422C4A1B47B38D0008C87E /* AdSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +101,17 @@
 		EA1290C11B0F5AD700C95C12 = {
 			isa = PBXGroup;
 			children = (
+				EA422C601B47B9D10008C87E /* GoogleMobileAds.framework */,
+				EA422C5B1B47B4070008C87E /* SystemConfiguration.framework */,
+				EA422C591B47B3FA0008C87E /* StoreKit.framework */,
+				EA422C571B47B3ED0008C87E /* MessageUI.framework */,
+				EA422C551B47B3E20008C87E /* EventKitUI.framework */,
+				EA422C531B47B3D70008C87E /* EventKit.framework */,
+				EA422C511B47B3C90008C87E /* CoreTelephony.framework */,
+				EA422C4F1B47B3B50008C87E /* CoreGraphics.framework */,
+				EA422C4D1B47B3A70008C87E /* AVFoundation.framework */,
+				EA422C4B1B47B39B0008C87E /* AudioToolbox.framework */,
+				EA422C491B47B38D0008C87E /* AdSupport.framework */,
 				EA1290CC1B0F5AD700C95C12 /* marubatsu */,
 				EA1290E21B0F5AD700C95C12 /* marubatsuTests */,
 				EA1290CB1B0F5AD700C95C12 /* Products */,
@@ -82,9 +131,12 @@
 			isa = PBXGroup;
 			children = (
 				EA1290CF1B0F5AD700C95C12 /* AppDelegate.swift */,
+				EA422C5D1B47B4E90008C87E /* HomeViewController.swift */,
+				EAE1BFDE1B353FD20059DFFD /* RankingViewController.swift */,
 				EA1290D11B0F5AD700C95C12 /* ViewController.swift */,
-				EA8E4AA81B22D86500F519DB /* TopViewController.swift */,
+				EA79BFF51B3D0586002CBAFF /* vsViewController.swift */,
 				EA1290D31B0F5AD700C95C12 /* Main.storyboard */,
+				EA422C5F1B47B6980008C87E /* AdMob-Bridging-Header.h */,
 				EA1FE5FB1B1008F100BB8A6B /* cardFuchi.png */,
 				EA1290D61B0F5AD700C95C12 /* Images.xcassets */,
 				EA1290D81B0F5AD700C95C12 /* LaunchScreen.xib */,
@@ -220,9 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA8E4AA91B22D86500F519DB /* TopViewController.swift in Sources */,
+				EA422C5E1B47B4E90008C87E /* HomeViewController.swift in Sources */,
 				EA1290D21B0F5AD700C95C12 /* ViewController.swift in Sources */,
+				EA79BFF61B3D0586002CBAFF /* vsViewController.swift in Sources */,
 				EA1290D01B0F5AD700C95C12 /* AppDelegate.swift in Sources */,
+				EAE1BFDF1B353FD20059DFFD /* RankingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,11 +401,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/kanamorimikito/Desktop/GoogleMobileAdsSdkiOS-7.3.1",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = marubatsu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/AdMob-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -361,11 +422,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/kanamorimikito/Desktop/GoogleMobileAdsSdkiOS-7.3.1",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = marubatsu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/AdMob-Bridging-Header.h";
 			};
 			name = Release;
 		};

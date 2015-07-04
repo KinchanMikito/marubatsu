@@ -35,6 +35,8 @@ class ViewController: UIViewController {
     
     @IBOutlet var winsLab:UILabel!
     
+    @IBOutlet var scoreLab:UILabel!
+    
     var squares:[Bool?] = [nil,nil,nil,nil,nil,nil,nil,nil,nil]
     
     var clear:Bool? = nil
@@ -50,6 +52,22 @@ class ViewController: UIViewController {
     var highscores = [no1,no2,no3,no4,no5]
     
     @IBOutlet var mokkaiButton:UIButton!
+    
+    let ahaha:String = "x"
+    
+    
+    
+    var myArray:[Int] = [100,100,100]
+    
+    var CPUArray:[Int] = [100,100,100]
+    
+    var isAITurn:Bool = false
+    
+    
+    var myScore:Int = 0
+    var CPUScore:Int = 0
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,84 +86,174 @@ class ViewController: UIViewController {
     }
 
     @IBAction func tap1(){
-        if squares[0] == nil && clear == nil{
+        if squares[0] == nil && clear == nil && isAITurn == false{
             lab1.text = "◯"
             squares[0] = true
-            count++
+            if myArray[2] != 100{
+                jikeshi()
+                squares[myArray[2]] = nil
+            }
+            myArray[2] = myArray[1]
+            myArray[1] = myArray[0]
+            myArray[0] = 0
+            //count++
+            isAITurn = true
+            NSRunLoop.mainRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.5))
             aite()
             check()
+            isAITurn = false
         }
     }
     @IBAction func tap2(){
-        if squares[1] == nil && clear == nil{
+        if squares[1] == nil && clear == nil && isAITurn == false{
             lab2.text = "◯"
             squares[1] = true
-            count++
+            if myArray[2] != 100{
+                jikeshi()
+                squares[myArray[2]] = nil
+            }
+            myArray[2] = myArray[1]
+            myArray[1] = myArray[0]
+            myArray[0] = 1
+            //count++
+            isAITurn = true
+            NSRunLoop.mainRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.5))
             aite()
             check()
+            isAITurn = false
         }
     }
     @IBAction func tap3(){
-        if squares[2] == nil && clear == nil{
+        if squares[2] == nil && clear == nil && isAITurn == false{
             lab3.text = "◯"
             squares[2] = true
-            count++
+            if myArray[2] != 100{
+                jikeshi()
+                squares[myArray[2]] = nil
+            }
+            myArray[2] = myArray[1]
+            myArray[1] = myArray[0]
+            myArray[0] = 2
+            //count++
+            isAITurn = true
+            NSRunLoop.mainRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.5))
             aite()
             check()
+            isAITurn = false
         }
     }
     @IBAction func tap4(){
-        if squares[3] == nil && clear == nil{
+        if squares[3] == nil && clear == nil && isAITurn == false{
             lab4.text = "◯"
             squares[3] = true
-            count++
+            if myArray[2] != 100{
+                jikeshi()
+                squares[myArray[2]] = nil
+            }
+            myArray[2] = myArray[1]
+            myArray[1] = myArray[0]
+            myArray[0] = 3
+            //count++
+            isAITurn = true
+            NSRunLoop.mainRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.5))
             aite()
             check()
+            isAITurn = false
         }
     }
     @IBAction func tap5(){
-        if squares[4] == nil && clear == nil{
+        if squares[4] == nil && clear == nil && isAITurn == false{
             lab5.text = "◯"
             squares[4] = true
-            count++
+            if myArray[2] != 100{
+                jikeshi()
+                squares[myArray[2]] = nil
+            }
+            myArray[2] = myArray[1]
+            myArray[1] = myArray[0]
+            myArray[0] = 4
+            //count++
+            isAITurn = true
+            NSRunLoop.mainRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.5))
             aite()
             check()
+            isAITurn = false
         }
     }
     @IBAction func tap6(){
-        if squares[5] == nil && clear == nil{
+        if squares[5] == nil && clear == nil && isAITurn == false{
             lab6.text = "◯"
             squares[5] = true
-            count++
+            if myArray[2] != 100{
+                jikeshi()
+                squares[myArray[2]] = nil
+            }
+            myArray[2] = myArray[1]
+            myArray[1] = myArray[0]
+            myArray[0] = 5
+            //count++
+            isAITurn = true
+            NSRunLoop.mainRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.5))
             aite()
             check()
+            isAITurn = false
         }
     }
     @IBAction func tap7(){
-        if squares[6] == nil && clear == nil{
+        if squares[6] == nil && clear == nil && isAITurn == false{
             lab7.text = "◯"
             squares[6] = true
-            count++
+            if myArray[2] != 100{
+                jikeshi()
+                squares[myArray[2]] = nil
+            }
+            myArray[2] = myArray[1]
+            myArray[1] = myArray[0]
+            myArray[0] = 6
+            //count++
+            isAITurn = true
+            NSRunLoop.mainRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.5))
             aite()
             check()
+            isAITurn = false
         }
     }
     @IBAction func tap8(){
-        if squares[7] == nil && clear == nil{
+        if squares[7] == nil && clear == nil && isAITurn == false{
             lab8.text = "◯"
             squares[7] = true
-            count++
+            if myArray[2] != 100{
+                jikeshi()
+                squares[myArray[2]] = nil
+            }
+            myArray[2] = myArray[1]
+            myArray[1] = myArray[0]
+            myArray[0] = 7
+            //count++
+            isAITurn = true
+            NSRunLoop.mainRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.5))
             aite()
             check()
+            isAITurn = false
         }
     }
     @IBAction func tap9(){
-        if squares[8] == nil && clear == nil{
+        if squares[8] == nil && clear == nil && isAITurn == false{
             lab9.text = "◯"
             squares[8] = true
-            count++
+            if myArray[2] != 100{
+                jikeshi()
+                squares[myArray[2]] = nil
+            }
+            myArray[2] = myArray[1]
+            myArray[1] = myArray[0]
+            myArray[0] = 8
+            //count++
+            isAITurn = true
+            NSRunLoop.mainRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.5))
             aite()
             check()
+            isAITurn = false
         }
     }
 
@@ -154,44 +262,46 @@ class ViewController: UIViewController {
         for var i = 0; i <= 2; i++ {
             
             if squares[i*3] == false && squares[i*3 + 1] == false && squares[i*3 + 2] == false{ //横-相手
-                clear = false
-                
+//                clear = false
+                CPUScore += 1
             }
             if squares[i] == false && squares[i+3] == false && squares[i+6] == false{ //縦-相手
-                clear = false
+//                clear = false
+                CPUScore += 1
             }
             if squares[i*3] == true && squares[i*3 + 1] == true && squares[i*3 + 2] == true{ //横-自分
-                clear = true
+//                clear = true
+                myScore += 1
             }
             if squares[i] == true && squares[i+3] == true && squares[i+6] == true{ //縦-自分
-                clear = true
+//                clear = true
+                myScore += 1
             }
             
         }
         
         
         if squares[0] == false && squares[4] == false && squares[8] == false {//ナナメ-相手
-            clear = false
+//            clear = false
+            CPUScore += 1
         }else if squares[2] == false && squares[4] == false && squares[6] == false {//ナナメ-相手
-            clear = false
+//            clear = false
+            CPUScore += 1
         }
         if squares[0] == true && squares[4] == true && squares[8] == true {//ナナメ-自分
-            clear = true
+//            clear = true
+            myScore += 1
         }else if squares[2] == true && squares[4] == true && squares[6] == true {//ナナメ-自分
-            clear = true
+//            clear = true
+            myScore += 1
         }
         
         
-        if clear == false{
-            lab.text = "lose..."
-            mokkaiButton.hidden = false
-            ranking(wins)
-            wins = 0
-            winsLab.text = String("\(wins)連勝中!")
-        }
+        scoreLab.text = String("\(myScore):\(CPUScore)")
         
-        if clear == true{
-            lab.text = "win!"
+        
+        if myScore == 5{
+            lab.text = "勝ち!"
             mokkaiButton.hidden = false
             if a == 0 && count != 5{
                 lab1.text = nil
@@ -214,12 +324,14 @@ class ViewController: UIViewController {
             }
             wins++
             winsLab.text = String("\(wins)連勝中!")
-        }else if count == 5{
-            lab.text = "draw"
+            clear = true
+        }else if CPUScore == 5{
+            lab.text = "負け..."
             mokkaiButton.hidden = false
             ranking(wins)
             wins = 0
             winsLab.text = String("\(wins)連勝中!")
+            clear = false
         }
         
         
@@ -284,24 +396,33 @@ class ViewController: UIViewController {
             squares[a] = false
             
             if a == 0{
-                lab1.text = "×"
+                lab1.text = ahaha
             }else if a == 1{
-                lab2.text = "×"
+                lab2.text = ahaha
             }else if a == 2{
-                lab3.text = "×"
+                lab3.text = ahaha
             }else if a == 3{
-                lab4.text = "×"
+                lab4.text = ahaha
             }else if a == 4{
-                lab5.text = "×"
+                lab5.text = ahaha
             }else if a == 5{
-                lab6.text = "×"
+                lab6.text = ahaha
             }else if a == 6{
-                lab7.text = "×"
+                lab7.text = ahaha
             }else if a == 7{
-                lab8.text = "×"
+                lab8.text = ahaha
             }else if a == 8{
-                lab9.text = "×"
+                lab9.text = ahaha
             }
+            
+            if CPUArray[2] != 100{
+                jikeshi2()
+                squares[CPUArray[2]] = nil
+            }
+            CPUArray[2] = CPUArray[1]
+            CPUArray[1] = CPUArray[0]
+            CPUArray[0] = a
+            
         }
     }
     
@@ -369,43 +490,6 @@ class ViewController: UIViewController {
             return 4
             
         }
-        if squares[2] == true && squares[6] == true && squares[4] == false{
-            
-            return aida[Int(arc4random_uniform(UInt32(aida.count)))]
-            
-        }else if squares[0] == true && squares[8] == true && squares[4] == false{
-            
-            return aida[Int(arc4random_uniform(UInt32(aida.count)))]
-            
-        }
-        
-        if squares[1] == true && squares[3] == true && squares[0] == nil{
-            return 0
-        }else if squares[1] == true && squares[5] == true && squares[2] == nil{
-            return 2
-        }else if squares[3] == true && squares[7] == true && squares[6] == nil{
-            return 6
-        }else if squares[7] == true && squares[5] == true && squares[8] == nil{
-            return 8
-        }
-        
-        if squares[1] == true && squares[6] == true && squares[0] == nil{
-            return 0
-        }else if squares[1] == true && squares[8] == true && squares[2] == nil{
-            return 2
-        }else if squares[7] == true && squares[0] == true && squares[6] == nil{
-            return 6
-        }else if squares[7] == true && squares[2] == true && squares[8] == nil{
-            return 8
-        }else if squares[3] == true && squares[2] == true && squares[0] == nil{
-            return 0
-        }else if squares[3] == true && squares[8] == true && squares[2] == nil{
-            return 2
-        }else if squares[5] == true && squares[0] == true && squares[6] == nil{
-            return 6
-        }else if squares[5] == true && squares[6] == true && squares[8] == nil{
-            return 8
-        }
         
         
         
@@ -441,6 +525,18 @@ class ViewController: UIViewController {
         
         winsLab.text = String("\(wins)連勝中!")
         
+        myArray[0] = 100
+        myArray[1] = 100
+        myArray[2] = 100
+        
+        CPUArray[0] = 100
+        CPUArray[1] = 100
+        CPUArray[2] = 100
+        
+        myScore = 0
+        CPUScore = 0
+        scoreLab.text = String("\(myScore):\(CPUScore)")
+        
     }
     
     func ranking(score:Int){
@@ -473,6 +569,55 @@ class ViewController: UIViewController {
                 
             }
             
+        }
+        
+    }
+    
+    func jikeshi(){
+        
+        if myArray[2] == 0{
+            lab1.text = nil
+        }else if myArray[2] == 1{
+            lab2.text = nil
+        }else if myArray[2] == 2{
+            lab3.text = nil
+        }else if myArray[2] == 3{
+            lab4.text = nil
+        }else if myArray[2] == 4{
+            lab5.text = nil
+        }else if myArray[2] == 5{
+            lab6.text = nil
+        }else if myArray[2] == 6{
+            lab7.text = nil
+        }else if myArray[2] == 7{
+            lab8.text = nil
+        }else if myArray[2] == 8{
+            lab9.text = nil
+        }
+        
+        
+        
+    }
+    
+    func jikeshi2(){
+        if CPUArray[2] == 0{
+            lab1.text = nil
+        }else if CPUArray[2] == 1{
+            lab2.text = nil
+        }else if CPUArray[2] == 2{
+            lab3.text = nil
+        }else if CPUArray[2] == 3{
+            lab4.text = nil
+        }else if CPUArray[2] == 4{
+            lab5.text = nil
+        }else if CPUArray[2] == 5{
+            lab6.text = nil
+        }else if CPUArray[2] == 6{
+            lab7.text = nil
+        }else if CPUArray[2] == 7{
+            lab8.text = nil
+        }else if CPUArray[2] == 8{
+            lab9.text = nil
         }
         
     }
