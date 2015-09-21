@@ -12,5 +12,4 @@
 #import "GoogleMobileAds/GADBannerView.h"
 #import "GoogleMobileAds/GADInterstitial.h"
 
-
 #endif

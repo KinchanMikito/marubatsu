@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA11FA891BA5A63C008838CE /* p2button.png in Resources */ = {isa = PBXBuildFile; fileRef = EA11FA871BA5A63C008838CE /* p2button.png */; };
+		EA11FA8B1BA5A711008838CE /* standardbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = EA11FA8A1BA5A711008838CE /* standardbutton.png */; };
+		EA11FA8D1BA5CAA3008838CE /* player1button.png in Resources */ = {isa = PBXBuildFile; fileRef = EA11FA8C1BA5CAA3008838CE /* player1button.png */; };
 		EA1290D01B0F5AD700C95C12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1290CF1B0F5AD700C95C12 /* AppDelegate.swift */; };
 		EA1290D21B0F5AD700C95C12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1290D11B0F5AD700C95C12 /* ViewController.swift */; };
 		EA1290D51B0F5AD700C95C12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA1290D31B0F5AD700C95C12 /* Main.storyboard */; };
@@ -14,6 +17,7 @@
 		EA1290DA1B0F5AD700C95C12 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1290D81B0F5AD700C95C12 /* LaunchScreen.xib */; };
 		EA1290E61B0F5AD700C95C12 /* marubatsuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1290E51B0F5AD700C95C12 /* marubatsuTests.swift */; };
 		EA1FE5FC1B1008F100BB8A6B /* cardFuchi.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1FE5FB1B1008F100BB8A6B /* cardFuchi.png */; };
+		EA22C5351BA3FE1F008CFA45 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA22C5341BA3FE1F008CFA45 /* Social.framework */; };
 		EA422C4A1B47B38D0008C87E /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C491B47B38D0008C87E /* AdSupport.framework */; };
 		EA422C4C1B47B39B0008C87E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C4B1B47B39B0008C87E /* AudioToolbox.framework */; };
 		EA422C4E1B47B3A70008C87E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C4D1B47B3A70008C87E /* AVFoundation.framework */; };
@@ -22,11 +26,25 @@
 		EA422C541B47B3D70008C87E /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C531B47B3D70008C87E /* EventKit.framework */; };
 		EA422C561B47B3E20008C87E /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C551B47B3E20008C87E /* EventKitUI.framework */; };
 		EA422C581B47B3ED0008C87E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C571B47B3ED0008C87E /* MessageUI.framework */; };
-		EA422C5A1B47B3FA0008C87E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C591B47B3FA0008C87E /* StoreKit.framework */; };
 		EA422C5C1B47B4070008C87E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C5B1B47B4070008C87E /* SystemConfiguration.framework */; };
 		EA422C5E1B47B4E90008C87E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA422C5D1B47B4E90008C87E /* HomeViewController.swift */; };
 		EA422C611B47B9D10008C87E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C601B47B9D10008C87E /* GoogleMobileAds.framework */; };
+		EA64132B1BAE771400D34B70 /* school_kokubankeshi.png in Resources */ = {isa = PBXBuildFile; fileRef = EA64132A1BAE771400D34B70 /* school_kokubankeshi.png */; };
+		EA64132D1BAE7C5100D34B70 /* kokubankeshi.png in Resources */ = {isa = PBXBuildFile; fileRef = EA64132C1BAE7C5100D34B70 /* kokubankeshi.png */; };
+		EA6413321BAE7EC600D34B70 /* titleMarubbatsu.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6413311BAE7EC600D34B70 /* titleMarubbatsu.png */; };
+		EA6D061D1BAEF9CD003868B6 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6D06161BAEF9CD003868B6 /* GoogleMobileAds.framework */; settings = {ASSET_TAGS = (); }; };
+		EA6D061E1BAEF9CD003868B6 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = EA6D061B1BAEF9CD003868B6 /* README.txt */; settings = {ASSET_TAGS = (); }; };
+		EA6D061F1BAEF9CD003868B6 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = EA6D061C1BAEF9CD003868B6 /* README.txt */; settings = {ASSET_TAGS = (); }; };
+		EA6FE7DA1B58DF2000D09C82 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6FE7D91B58DF2000D09C82 /* StoreKit.framework */; };
 		EA79BFF61B3D0586002CBAFF /* vsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA79BFF51B3D0586002CBAFF /* vsViewController.swift */; };
+		EAAEB51F1BA4340C009BA7B5 /* shareontwitter.png in Resources */ = {isa = PBXBuildFile; fileRef = EAAEB51E1BA4340C009BA7B5 /* shareontwitter.png */; };
+		EAAEB5211BA44069009BA7B5 /* notification.png in Resources */ = {isa = PBXBuildFile; fileRef = EAAEB5201BA44069009BA7B5 /* notification.png */; };
+		EAC449E71BAC2238002DB943 /* Main3.5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAC449E61BAC2238002DB943 /* Main3.5.storyboard */; };
+		EAC449E91BAE5BA4002DB943 /* chalk.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC449E81BAE5BA4002DB943 /* chalk.png */; };
+		EAC449EB1BAE5C49002DB943 /* chalk2.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC449EA1BAE5C49002DB943 /* chalk2.png */; };
+		EAC449ED1BAE5C8E002DB943 /* chalk3.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC449EC1BAE5C8E002DB943 /* chalk3.png */; };
+		EAC449EF1BAE5DFB002DB943 /* chalk5.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC449EE1BAE5DFB002DB943 /* chalk5.png */; };
+		EAC449F11BAE6130002DB943 /* chalk7.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC449F01BAE6130002DB943 /* chalk7.png */; };
 		EAE1BFDF1B353FD20059DFFD /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE1BFDE1B353FD20059DFFD /* RankingViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +59,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA11FA871BA5A63C008838CE /* p2button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p2button.png; sourceTree = "<group>"; };
+		EA11FA8A1BA5A711008838CE /* standardbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = standardbutton.png; sourceTree = "<group>"; };
+		EA11FA8C1BA5CAA3008838CE /* player1button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player1button.png; sourceTree = "<group>"; };
 		EA1290CA1B0F5AD700C95C12 /* marubatsu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marubatsu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA1290CE1B0F5AD700C95C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA1290CF1B0F5AD700C95C12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +73,7 @@
 		EA1290E41B0F5AD700C95C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA1290E51B0F5AD700C95C12 /* marubatsuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marubatsuTests.swift; sourceTree = "<group>"; };
 		EA1FE5FB1B1008F100BB8A6B /* cardFuchi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardFuchi.png; sourceTree = "<group>"; };
+		EA22C5341BA3FE1F008CFA45 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		EA422C491B47B38D0008C87E /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		EA422C4B1B47B39B0008C87E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		EA422C4D1B47B3A70008C87E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -60,12 +82,30 @@
 		EA422C531B47B3D70008C87E /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		EA422C551B47B3E20008C87E /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		EA422C571B47B3ED0008C87E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		EA422C591B47B3FA0008C87E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EA422C5B1B47B4070008C87E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		EA422C5D1B47B4E90008C87E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EA422C5F1B47B6980008C87E /* AdMob-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AdMob-Bridging-Header.h"; sourceTree = "<group>"; };
 		EA422C601B47B9D10008C87E /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		EA64132A1BAE771400D34B70 /* school_kokubankeshi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = school_kokubankeshi.png; sourceTree = "<group>"; };
+		EA64132C1BAE7C5100D34B70 /* kokubankeshi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kokubankeshi.png; sourceTree = "<group>"; };
+		EA64132E1BAE7D0000D34B70 /* KodomoRounded-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KodomoRounded-Light.otf"; sourceTree = "<group>"; };
+		EA6413311BAE7EC600D34B70 /* titleMarubbatsu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleMarubbatsu.png; sourceTree = "<group>"; };
+		EA6D06161BAEF9CD003868B6 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		EA6D06181BAEF9CD003868B6 /* GADMAdNetworkAdapterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADMAdNetworkAdapterProtocol.h; sourceTree = "<group>"; };
+		EA6D06191BAEF9CD003868B6 /* GADMAdNetworkConnectorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADMAdNetworkConnectorProtocol.h; sourceTree = "<group>"; };
+		EA6D061A1BAEF9CD003868B6 /* GADMEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADMEnums.h; sourceTree = "<group>"; };
+		EA6D061B1BAEF9CD003868B6 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		EA6D061C1BAEF9CD003868B6 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		EA6FE7D91B58DF2000D09C82 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EA79BFF51B3D0586002CBAFF /* vsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = vsViewController.swift; sourceTree = "<group>"; };
+		EAAEB51E1BA4340C009BA7B5 /* shareontwitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shareontwitter.png; sourceTree = "<group>"; };
+		EAAEB5201BA44069009BA7B5 /* notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notification.png; sourceTree = "<group>"; };
+		EAC449E61BAC2238002DB943 /* Main3.5.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main3.5.storyboard; sourceTree = "<group>"; };
+		EAC449E81BAE5BA4002DB943 /* chalk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chalk.png; sourceTree = "<group>"; };
+		EAC449EA1BAE5C49002DB943 /* chalk2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chalk2.png; sourceTree = "<group>"; };
+		EAC449EC1BAE5C8E002DB943 /* chalk3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chalk3.png; sourceTree = "<group>"; };
+		EAC449EE1BAE5DFB002DB943 /* chalk5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chalk5.png; sourceTree = "<group>"; };
+		EAC449F01BAE6130002DB943 /* chalk7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chalk7.png; sourceTree = "<group>"; };
 		EAE1BFDE1B353FD20059DFFD /* RankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,7 +115,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA422C5C1B47B4070008C87E /* SystemConfiguration.framework in Frameworks */,
-				EA422C5A1B47B3FA0008C87E /* StoreKit.framework in Frameworks */,
+				EA22C5351BA3FE1F008CFA45 /* Social.framework in Frameworks */,
+				EA6D061D1BAEF9CD003868B6 /* GoogleMobileAds.framework in Frameworks */,
 				EA422C581B47B3ED0008C87E /* MessageUI.framework in Frameworks */,
 				EA422C611B47B9D10008C87E /* GoogleMobileAds.framework in Frameworks */,
 				EA422C561B47B3E20008C87E /* EventKitUI.framework in Frameworks */,
@@ -85,6 +126,7 @@
 				EA422C4E1B47B3A70008C87E /* AVFoundation.framework in Frameworks */,
 				EA422C4C1B47B39B0008C87E /* AudioToolbox.framework in Frameworks */,
 				EA422C4A1B47B38D0008C87E /* AdSupport.framework in Frameworks */,
+				EA6FE7DA1B58DF2000D09C82 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,9 +143,10 @@
 		EA1290C11B0F5AD700C95C12 = {
 			isa = PBXGroup;
 			children = (
+				EA22C5341BA3FE1F008CFA45 /* Social.framework */,
+				EA6FE7D91B58DF2000D09C82 /* StoreKit.framework */,
 				EA422C601B47B9D10008C87E /* GoogleMobileAds.framework */,
 				EA422C5B1B47B4070008C87E /* SystemConfiguration.framework */,
-				EA422C591B47B3FA0008C87E /* StoreKit.framework */,
 				EA422C571B47B3ED0008C87E /* MessageUI.framework */,
 				EA422C551B47B3E20008C87E /* EventKitUI.framework */,
 				EA422C531B47B3D70008C87E /* EventKit.framework */,
@@ -130,14 +173,30 @@
 		EA1290CC1B0F5AD700C95C12 /* marubatsu */ = {
 			isa = PBXGroup;
 			children = (
+				EA6D06151BAEF9CD003868B6 /* GoogleMobileAdsSdkiOS-7.3.1 */,
 				EA1290CF1B0F5AD700C95C12 /* AppDelegate.swift */,
 				EA422C5D1B47B4E90008C87E /* HomeViewController.swift */,
 				EAE1BFDE1B353FD20059DFFD /* RankingViewController.swift */,
 				EA1290D11B0F5AD700C95C12 /* ViewController.swift */,
 				EA79BFF51B3D0586002CBAFF /* vsViewController.swift */,
 				EA1290D31B0F5AD700C95C12 /* Main.storyboard */,
+				EAC449E61BAC2238002DB943 /* Main3.5.storyboard */,
 				EA422C5F1B47B6980008C87E /* AdMob-Bridging-Header.h */,
+				EAAEB5201BA44069009BA7B5 /* notification.png */,
 				EA1FE5FB1B1008F100BB8A6B /* cardFuchi.png */,
+				EA11FA8C1BA5CAA3008838CE /* player1button.png */,
+				EA11FA871BA5A63C008838CE /* p2button.png */,
+				EA11FA8A1BA5A711008838CE /* standardbutton.png */,
+				EAAEB51E1BA4340C009BA7B5 /* shareontwitter.png */,
+				EAC449E81BAE5BA4002DB943 /* chalk.png */,
+				EAC449EA1BAE5C49002DB943 /* chalk2.png */,
+				EAC449EC1BAE5C8E002DB943 /* chalk3.png */,
+				EAC449EE1BAE5DFB002DB943 /* chalk5.png */,
+				EAC449F01BAE6130002DB943 /* chalk7.png */,
+				EA64132A1BAE771400D34B70 /* school_kokubankeshi.png */,
+				EA64132C1BAE7C5100D34B70 /* kokubankeshi.png */,
+				EA64132E1BAE7D0000D34B70 /* KodomoRounded-Light.otf */,
+				EA6413311BAE7EC600D34B70 /* titleMarubbatsu.png */,
 				EA1290D61B0F5AD700C95C12 /* Images.xcassets */,
 				EA1290D81B0F5AD700C95C12 /* LaunchScreen.xib */,
 				EA1290CD1B0F5AD700C95C12 /* Supporting Files */,
@@ -168,6 +227,27 @@
 				EA1290E41B0F5AD700C95C12 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA6D06151BAEF9CD003868B6 /* GoogleMobileAdsSdkiOS-7.3.1 */ = {
+			isa = PBXGroup;
+			children = (
+				EA6D06161BAEF9CD003868B6 /* GoogleMobileAds.framework */,
+				EA6D06171BAEF9CD003868B6 /* Mediation Adapters */,
+				EA6D061C1BAEF9CD003868B6 /* README.txt */,
+			);
+			path = "GoogleMobileAdsSdkiOS-7.3.1";
+			sourceTree = "<group>";
+		};
+		EA6D06171BAEF9CD003868B6 /* Mediation Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				EA6D06181BAEF9CD003868B6 /* GADMAdNetworkAdapterProtocol.h */,
+				EA6D06191BAEF9CD003868B6 /* GADMAdNetworkConnectorProtocol.h */,
+				EA6D061A1BAEF9CD003868B6 /* GADMEnums.h */,
+				EA6D061B1BAEF9CD003868B6 /* README.txt */,
+			);
+			path = "Mediation Adapters";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,12 +294,19 @@
 		EA1290C21B0F5AD700C95C12 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Mikito Kanamori";
 				TargetAttributes = {
 					EA1290C91B0F5AD700C95C12 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = 3GY95F449H;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					EA1290DE1B0F5AD700C95C12 = {
 						CreatedOnToolsVersion = 6.2;
@@ -251,10 +338,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA64132D1BAE7C5100D34B70 /* kokubankeshi.png in Resources */,
 				EA1290D51B0F5AD700C95C12 /* Main.storyboard in Resources */,
+				EAAEB5211BA44069009BA7B5 /* notification.png in Resources */,
+				EA11FA8B1BA5A711008838CE /* standardbutton.png in Resources */,
+				EAC449E91BAE5BA4002DB943 /* chalk.png in Resources */,
 				EA1FE5FC1B1008F100BB8A6B /* cardFuchi.png in Resources */,
+				EAC449EF1BAE5DFB002DB943 /* chalk5.png in Resources */,
 				EA1290DA1B0F5AD700C95C12 /* LaunchScreen.xib in Resources */,
+				EAC449F11BAE6130002DB943 /* chalk7.png in Resources */,
+				EA11FA8D1BA5CAA3008838CE /* player1button.png in Resources */,
+				EAC449E71BAC2238002DB943 /* Main3.5.storyboard in Resources */,
+				EAAEB51F1BA4340C009BA7B5 /* shareontwitter.png in Resources */,
 				EA1290D71B0F5AD700C95C12 /* Images.xcassets in Resources */,
+				EAC449EB1BAE5C49002DB943 /* chalk2.png in Resources */,
+				EA6D061F1BAEF9CD003868B6 /* README.txt in Resources */,
+				EA11FA891BA5A63C008838CE /* p2button.png in Resources */,
+				EAC449ED1BAE5C8E002DB943 /* chalk3.png in Resources */,
+				EA6D061E1BAEF9CD003868B6 /* README.txt in Resources */,
+				EA6413321BAE7EC600D34B70 /* titleMarubbatsu.png in Resources */,
+				EA64132B1BAE771400D34B70 /* school_kokubankeshi.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,16 +502,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/kanamorimikito/Desktop/GoogleMobileAdsSdkiOS-7.3.1",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/marubatsu/GoogleMobileAdsSdkiOS-7.3.1",
 				);
 				INFOPLIST_FILE = marubatsu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GoogleAnalyticsServicesiOS_3.13",
+					"$(PROJECT_DIR)/marubatsu/GoogleAnalyticsServicesiOS_3.13",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -420,16 +530,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/kanamorimikito/Desktop/GoogleMobileAdsSdkiOS-7.3.1",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/marubatsu/GoogleMobileAdsSdkiOS-7.3.1",
 				);
 				INFOPLIST_FILE = marubatsu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GoogleAnalyticsServicesiOS_3.13",
+					"$(PROJECT_DIR)/marubatsu/GoogleAnalyticsServicesiOS_3.13",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

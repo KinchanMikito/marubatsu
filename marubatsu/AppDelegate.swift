@@ -12,10 +12,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let storyboard: UIStoryboard = self.grabStoryboard()
+        if let window = window {
+            window.rootViewController = storyboard.instantiateInitialViewController() as UIViewController!
+        }
+        
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 
@@ -39,6 +48,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func grabStoryboard() -> UIStoryboard {
+        var storyboard = UIStoryboard()
+        let height = UIScreen.mainScreen().bounds.size.height
+        
+        if height == 480 {
+            storyboard = UIStoryboard(name: "Main3.5", bundle: nil)
+        } else {
+            storyboard = UIStoryboard(name: "Main", bundle: nil)
+        }
+        return storyboard
     }
 
 

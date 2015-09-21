@@ -7,19 +7,34 @@
 //
 
 import UIKit
+import Social
+
+import GoogleMobileAds
 
 let ud = NSUserDefaults.standardUserDefaults()
 
-var no1:Int = ud.integerForKey("zero")
-var no2:Int = ud.integerForKey("one")
-var no3:Int = ud.integerForKey("two")
-var no4:Int = ud.integerForKey("three")
-var no5:Int = ud.integerForKey("four")
+var normal1:Int = ud.integerForKey("zero")
+var normal2:Int = ud.integerForKey("one")
+var normal3:Int = ud.integerForKey("two")
+var normal4:Int = ud.integerForKey("three")
+var normal5:Int = ud.integerForKey("four")
+
+var easy1:Int = ud.integerForKey("zeroe")
+var easy2:Int = ud.integerForKey("onee")
+var easy3:Int = ud.integerForKey("twoe")
+var easy4:Int = ud.integerForKey("threee")
+var easy5:Int = ud.integerForKey("foure")
+
+var hard1:Int = ud.integerForKey("zeroh")
+var hard2:Int = ud.integerForKey("oneh")
+var hard3:Int = ud.integerForKey("twoh")
+var hard4:Int = ud.integerForKey("threeh")
+var hard5:Int = ud.integerForKey("fourh")
 
 var wins:Int = 0
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDelegate {
     
     @IBOutlet var lab1:UILabel!
     @IBOutlet var lab2:UILabel!
@@ -40,22 +55,20 @@ class ViewController: UIViewController {
     var squares:[Bool?] = [nil,nil,nil,nil,nil,nil,nil,nil,nil]
     
     var clear:Bool? = nil
-
-    var count:Int = 0
     
-    var a:Int = 0
+    var comNum:Int = 0
     
     var hajikko:[Int] = [0,2,6,8]
     
     var aida:[Int] = [1,3,5,7]
     
-    var highscores = [no1,no2,no3,no4,no5]
+    var highscoresNormal = [normal1,normal2,normal3,normal4,normal5]
+    
+    var highscoresEasy = [easy1,easy2,easy3,easy4,easy5]
+    
+    var highscoresHard = [hard1,hard2,hard3,hard4,hard5]
     
     @IBOutlet var mokkaiButton:UIButton!
-    
-    let ahaha:String = "x"
-    
-    
     
     var myArray:[Int] = [100,100,100]
     
@@ -68,16 +81,21 @@ class ViewController: UIViewController {
     var CPUScore:Int = 0
     
     
+    var _interstitial: GADInterstitial?
+    
+    let levelname = ["EASY","NORMAL","HARD"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         mokkai()
-        ud.setInteger(0, forKey: "zero")
-        ud.setInteger(0, forKey: "one")
-        ud.setInteger(0, forKey: "two")
-        ud.setInteger(0, forKey: "three")
-        ud.setInteger(0, forKey: "four")
+        
+        let bannerView:GADBannerView = getAdBannerView()
+        self.view.addSubview(bannerView)
+        
+        
+        _interstitial = createAndLoadInterstitial()
+        
 }
 
     override func didReceiveMemoryWarning() {
@@ -87,7 +105,7 @@ class ViewController: UIViewController {
 
     @IBAction func tap1(){
         if squares[0] == nil && clear == nil && isAITurn == false{
-            lab1.text = "◯"
+            lab1.text = "0"
             squares[0] = true
             if myArray[2] != 100{
                 jikeshi()
@@ -96,17 +114,20 @@ class ViewController: UIViewController {
             myArray[2] = myArray[1]
             myArray[1] = myArray[0]
             myArray[0] = 0
-            //count++
+            check()
             isAITurn = true
             NSRunLoop.mainRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.5))
-            aite()
-            check()
+            if myScore != 5{
+                aite()
+                check()
+            }
+            
             isAITurn = false
         }
     }
     @IBAction func tap2(){
         if squares[1] == nil && clear == nil && isAITurn == false{
-            lab2.text = "◯"
+            lab2.text = "0"
             squares[1] = true
             if myArray[2] != 100{
                 jikeshi()
@@ -115,17 +136,20 @@ class ViewController: UIViewController {
             myArray[2] = myArray[1]
             myArray[1] = myArray[0]
             myArray[0] = 1
-            //count++
+            check()
             isAITurn = true
             NSRunLoop.mainRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.5))
-            aite()
-            check()
+            if myScore != 5{
+                aite()
+                check()
+            }
+            
             isAITurn = false
         }
     }
     @IBAction func tap3(){
         if squares[2] == nil && clear == nil && isAITurn == false{
-            lab3.text = "◯"
+            lab3.text = "0"
             squares[2] = true
             if myArray[2] != 100{
                 jikeshi()
@@ -134,17 +158,20 @@ class ViewController: UIViewController {
             myArray[2] = myArray[1]
             myArray[1] = myArray[0]
             myArray[0] = 2
-            //count++
+            check()
             isAITurn = true
             NSRunLoop.mainRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.5))
-            aite()
-            check()
+            if myScore != 5{
+                aite()
+                check()
+            }
+            
             isAITurn = false
         }
     }
     @IBAction func tap4(){
         if squares[3] == nil && clear == nil && isAITurn == false{
-            lab4.text = "◯"
+            lab4.text = "0"
             squares[3] = true
             if myArray[2] != 100{
                 jikeshi()
@@ -153,17 +180,20 @@ class ViewController: UIViewController {
             myArray[2] = myArray[1]
             myArray[1] = myArray[0]
             myArray[0] = 3
-            //count++
+            check()
             isAITurn = true
             NSRunLoop.mainRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.5))
-            aite()
-            check()
+            if myScore != 5{
+                aite()
+                check()
+            }
+            
             isAITurn = false
         }
     }
     @IBAction func tap5(){
         if squares[4] == nil && clear == nil && isAITurn == false{
-            lab5.text = "◯"
+            lab5.text = "0"
             squares[4] = true
             if myArray[2] != 100{
                 jikeshi()
@@ -172,17 +202,20 @@ class ViewController: UIViewController {
             myArray[2] = myArray[1]
             myArray[1] = myArray[0]
             myArray[0] = 4
-            //count++
+            check()
             isAITurn = true
             NSRunLoop.mainRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.5))
-            aite()
-            check()
+            if myScore != 5{
+                aite()
+                check()
+            }
+            
             isAITurn = false
         }
     }
     @IBAction func tap6(){
         if squares[5] == nil && clear == nil && isAITurn == false{
-            lab6.text = "◯"
+            lab6.text = "0"
             squares[5] = true
             if myArray[2] != 100{
                 jikeshi()
@@ -191,17 +224,20 @@ class ViewController: UIViewController {
             myArray[2] = myArray[1]
             myArray[1] = myArray[0]
             myArray[0] = 5
-            //count++
+            check()
             isAITurn = true
             NSRunLoop.mainRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.5))
-            aite()
-            check()
+            if myScore != 5{
+                aite()
+                check()
+            }
+            
             isAITurn = false
         }
     }
     @IBAction func tap7(){
         if squares[6] == nil && clear == nil && isAITurn == false{
-            lab7.text = "◯"
+            lab7.text = "0"
             squares[6] = true
             if myArray[2] != 100{
                 jikeshi()
@@ -210,17 +246,20 @@ class ViewController: UIViewController {
             myArray[2] = myArray[1]
             myArray[1] = myArray[0]
             myArray[0] = 6
-            //count++
+            check()
             isAITurn = true
             NSRunLoop.mainRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.5))
-            aite()
-            check()
+            if myScore != 5{
+                aite()
+                check()
+            }
+            
             isAITurn = false
         }
     }
     @IBAction func tap8(){
         if squares[7] == nil && clear == nil && isAITurn == false{
-            lab8.text = "◯"
+            lab8.text = "0"
             squares[7] = true
             if myArray[2] != 100{
                 jikeshi()
@@ -229,17 +268,20 @@ class ViewController: UIViewController {
             myArray[2] = myArray[1]
             myArray[1] = myArray[0]
             myArray[0] = 7
-            //count++
+            check()
             isAITurn = true
             NSRunLoop.mainRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.5))
-            aite()
-            check()
+            if myScore != 5{
+                aite()
+                check()
+            }
+            
             isAITurn = false
         }
     }
     @IBAction func tap9(){
         if squares[8] == nil && clear == nil && isAITurn == false{
-            lab9.text = "◯"
+            lab9.text = "0"
             squares[8] = true
             if myArray[2] != 100{
                 jikeshi()
@@ -248,11 +290,14 @@ class ViewController: UIViewController {
             myArray[2] = myArray[1]
             myArray[1] = myArray[0]
             myArray[0] = 8
-            //count++
+            check()
             isAITurn = true
             NSRunLoop.mainRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.5))
-            aite()
-            check()
+            if myScore != 5{
+                aite()
+                check()
+            }
+            
             isAITurn = false
         }
     }
@@ -261,71 +306,63 @@ class ViewController: UIViewController {
         
         for var i = 0; i <= 2; i++ {
             
-            if squares[i*3] == false && squares[i*3 + 1] == false && squares[i*3 + 2] == false{ //横-相手
-//                clear = false
+            if squares[i*3] == false && squares[i*3 + 1] == false && squares[i*3 + 2] == false && isAITurn == true{ //横-相手
                 CPUScore += 1
             }
-            if squares[i] == false && squares[i+3] == false && squares[i+6] == false{ //縦-相手
-//                clear = false
+            if squares[i] == false && squares[i+3] == false && squares[i+6] == false && isAITurn == true{ //縦-相手
                 CPUScore += 1
             }
-            if squares[i*3] == true && squares[i*3 + 1] == true && squares[i*3 + 2] == true{ //横-自分
-//                clear = true
+            if squares[i*3] == true && squares[i*3 + 1] == true && squares[i*3 + 2] == true && isAITurn == false{ //横-自分
                 myScore += 1
             }
-            if squares[i] == true && squares[i+3] == true && squares[i+6] == true{ //縦-自分
-//                clear = true
+            if squares[i] == true && squares[i+3] == true && squares[i+6] == true && isAITurn == false{ //縦-自分
                 myScore += 1
             }
             
         }
         
         
-        if squares[0] == false && squares[4] == false && squares[8] == false {//ナナメ-相手
-//            clear = false
+        if squares[0] == false && squares[4] == false && squares[8] == false && isAITurn == true{//ナナメ-相手
             CPUScore += 1
-        }else if squares[2] == false && squares[4] == false && squares[6] == false {//ナナメ-相手
-//            clear = false
+        }else if squares[2] == false && squares[4] == false && squares[6] == false && isAITurn == true{//ナナメ-相手
             CPUScore += 1
         }
-        if squares[0] == true && squares[4] == true && squares[8] == true {//ナナメ-自分
-//            clear = true
+        if squares[0] == true && squares[4] == true && squares[8] == true && isAITurn == false{//ナナメ-自分
             myScore += 1
-        }else if squares[2] == true && squares[4] == true && squares[6] == true {//ナナメ-自分
-//            clear = true
+        }else if squares[2] == true && squares[4] == true && squares[6] == true && isAITurn == false{//ナナメ-自分
             myScore += 1
         }
         
         
-        scoreLab.text = String("\(myScore):\(CPUScore)")
+        scoreLab.text = String("\(myScore) : \(CPUScore)")
         
         
-        if myScore == 5{
+        if myScore == 5 && isAITurn == false{
             lab.text = "勝ち!"
             mokkaiButton.hidden = false
-            if a == 0 && count != 5{
+            if comNum == 0{
                 lab1.text = nil
-            }else if a == 1 && count != 5{
+            }else if comNum == 1{
                 lab2.text = nil
-            }else if a == 2 && count != 5{
+            }else if comNum == 2{
                 lab3.text = nil
-            }else if a == 3 && count != 5{
+            }else if comNum == 3{
                 lab4.text = nil
-            }else if a == 4 && count != 5{
+            }else if comNum == 4{
                 lab5.text = nil
-            }else if a == 5 && count != 5{
+            }else if comNum == 5{
                 lab6.text = nil
-            }else if a == 6 && count != 5{
+            }else if comNum == 6{
                 lab7.text = nil
-            }else if a == 7 && count != 5{
+            }else if comNum == 7{
                 lab8.text = nil
-            }else if a == 8 && count != 5{
+            }else if comNum == 8{
                 lab9.text = nil
             }
             wins++
             winsLab.text = String("\(wins)連勝中!")
             clear = true
-        }else if CPUScore == 5{
+        }else if CPUScore == 5 && isAITurn == true{
             lab.text = "負け..."
             mokkaiButton.hidden = false
             ranking(wins)
@@ -343,158 +380,944 @@ class ViewController: UIViewController {
         
         mokkai()
         
+        if let isReady = _interstitial?.isReady {
+            _interstitial?.presentFromRootViewController(self)
+        }
+        
     }
     
     func aite(){
-        
-        if count < 5 {
-            a = hantei()
-            while a == 0 && squares[a] != nil{
-                a = hajikko[Int(arc4random_uniform(UInt32(hajikko.count)))]
-            }
-            while a == 2 && squares[a] != nil{
-                a = hajikko[Int(arc4random_uniform(UInt32(hajikko.count)))]
-            }
-            while a == 6 && squares[a] != nil{
-                a = hajikko[Int(arc4random_uniform(UInt32(hajikko.count)))]
-            }
-            while a == 8 && squares[a] != nil{
-                a = hajikko[Int(arc4random_uniform(UInt32(hajikko.count)))]
-            }
-            
-            
-            while a == 0 && squares[a] != nil{
-                a = Int(arc4random_uniform(8)) + 1
-            }
-            while a == 1 && squares[a] != nil{
-                a = Int(arc4random_uniform(7)) + 2
-            }
-            while a == 2 && squares[a] != nil{
-                a = Int(arc4random_uniform(6)) + 3
-            }
-            while a == 3 && squares[a] != nil{
-                a = Int(arc4random_uniform(5)) + 4
-            }
-            while a == 4 && squares[a] != nil{
-                a = Int(arc4random_uniform(4)) + 5
-            }
-            while a == 5 && squares[a] != nil{
-                a = Int(arc4random_uniform(3)) + 6
-            }
-            while a == 6 && squares[a] != nil{
-                a = Int(arc4random_uniform(2)) + 7
-            }
-            while a == 7 && squares[a] != nil{
-                a = 8
-            }
-            
-            while a == 8 && squares[8] != nil {
-                aite()
-            }
-            
-            
-            squares[a] = false
-            
-            if a == 0{
-                lab1.text = ahaha
-            }else if a == 1{
-                lab2.text = ahaha
-            }else if a == 2{
-                lab3.text = ahaha
-            }else if a == 3{
-                lab4.text = ahaha
-            }else if a == 4{
-                lab5.text = ahaha
-            }else if a == 5{
-                lab6.text = ahaha
-            }else if a == 6{
-                lab7.text = ahaha
-            }else if a == 7{
-                lab8.text = ahaha
-            }else if a == 8{
-                lab9.text = ahaha
-            }
-            
-            if CPUArray[2] != 100{
-                jikeshi2()
-                squares[CPUArray[2]] = nil
-            }
-            CPUArray[2] = CPUArray[1]
-            CPUArray[1] = CPUArray[0]
-            CPUArray[0] = a
+        if level == 0{
+            comNum = hanteiEasy()
             
         }
+        if level == 1{
+            comNum = hanteiNormal()
+        }
+        if level == 2{
+            comNum = hanteiHard()
+        }
+        squares[comNum] = false
+        
+        if comNum == 0{
+            lab1.text = "x"
+        }
+        if comNum == 1{
+            lab2.text = "x"
+        }
+        if comNum == 2{
+            lab3.text = "x"
+        }
+        if comNum == 3{
+            lab4.text = "x"
+        }
+        if comNum == 4{
+            lab5.text = "x"
+        }
+        if comNum == 5{
+            lab6.text = "x"
+        }
+        if comNum == 6{
+            lab7.text = "x"
+        }
+        if comNum == 7{
+            lab8.text = "x"
+        }
+        if comNum == 8{
+            lab9.text = "x"
+        }
+        
+        
+        CPUArray[2] = CPUArray[1]
+        CPUArray[1] = CPUArray[0]
+        CPUArray[0] = comNum
     }
     
-    func hantei() -> Int {
+    func hanteiEasy() -> Int{
+        
+        let lastNum = CPUArray[2]
+        
+        if CPUArray[2] != 100{
+            jikeshi2()
+            squares[CPUArray[2]] = nil
+        }
         
         for var i = 0; i <= 2; i++ {
             
-            if squares[i*3] == false && squares[i*3 + 1] == false && squares[i*3 + 2] == nil{
+            if squares[i*3] == false && squares[i*3 + 1] == false && squares[i*3 + 2] == nil && lastNum != i*3 + 2{
                 return i*3 + 2
-            }else if squares[i*3] == false && squares[i*3 + 2] == false && squares[i*3 + 1] == nil{
+            }else if squares[i*3] == false && squares[i*3 + 2] == false && squares[i*3 + 1] == nil && lastNum != i*3 + 1{
                 return i*3 + 1
-            }else if squares[i*3 + 1] == false && squares[i*3 + 2] == false && squares[i*3] == nil{
+            }else if squares[i*3 + 1] == false && squares[i*3 + 2] == false && squares[i*3] == nil && lastNum != i*3{
                 return i*3
-            }else if squares[i] == false && squares[i+3] == false && squares[i+6] == nil{
+            }else if squares[i] == false && squares[i+3] == false && squares[i+6] == nil && lastNum != i+6{
                 return i+6
-            }else if squares[i] == false && squares[i+6] == false && squares[i+3] == nil{
+            }else if squares[i] == false && squares[i+6] == false && squares[i+3] == nil && lastNum != i+3{
                 return i+3
-            }else if squares[i+6] == false && squares[i+3] == false && squares[i] == nil{
+            }else if squares[i+6] == false && squares[i+3] == false && squares[i] == nil && lastNum != i{
                 return i
-            }else if squares[0] == false && squares[4] == false && squares[8] == nil{
+            }else if squares[0] == false && squares[4] == false && squares[8] == nil && lastNum != 8{
                 return 8
-            }else if squares[0] == false && squares[8] == false && squares[4] == nil{
+            }else if squares[0] == false && squares[8] == false && squares[4] == nil && lastNum != 4{
                 return 4
-            }else if squares[8] == false && squares[4] == false && squares[0] == nil{
+            }else if squares[8] == false && squares[4] == false && squares[0] == nil && lastNum != 0{
                 return 0
-            }else if squares[2] == false && squares[4] == false && squares[6] == nil{
+            }else if squares[2] == false && squares[4] == false && squares[6] == nil && lastNum != 6{
                 return 6
-            }else if squares[2] == false && squares[6] == false && squares[4] == nil{
+            }else if squares[2] == false && squares[6] == false && squares[4] == nil && lastNum != 4{
                 return 4
-            }else if squares[6] == false && squares[4] == false && squares[2] == nil{
+            }else if squares[6] == false && squares[4] == false && squares[2] == nil && lastNum != 2{
+                return 2
+            }
+        }
+        
+        var randomNum = Int(arc4random_uniform(9))
+        
+        while squares[randomNum] != nil || lastNum == randomNum{
+            
+            randomNum = Int(arc4random_uniform(9))
+            
+        }
+        
+        return randomNum
+        
+    }
+    
+    func hanteiNormal() -> Int {
+        
+        let lastNum = CPUArray[2]
+        
+        if CPUArray[2] != 100{
+            jikeshi2()
+            squares[CPUArray[2]] = nil
+        }
+        
+        for var i = 0; i <= 2; i++ {
+            
+            if squares[i*3] == false && squares[i*3 + 1] == false && squares[i*3 + 2] == nil && lastNum != i*3 + 2{
+                return i*3 + 2
+            }else if squares[i*3] == false && squares[i*3 + 2] == false && squares[i*3 + 1] == nil && lastNum != i*3 + 1{
+                return i*3 + 1
+            }else if squares[i*3 + 1] == false && squares[i*3 + 2] == false && squares[i*3] == nil && lastNum != i*3{
+                return i*3
+            }else if squares[i] == false && squares[i+3] == false && squares[i+6] == nil && lastNum != i+6{
+                return i+6
+            }else if squares[i] == false && squares[i+6] == false && squares[i+3] == nil && lastNum != i+3{
+                return i+3
+            }else if squares[i+6] == false && squares[i+3] == false && squares[i] == nil && lastNum != i{
+                return i
+            }else if squares[0] == false && squares[4] == false && squares[8] == nil && lastNum != 8{
+                return 8
+            }else if squares[0] == false && squares[8] == false && squares[4] == nil && lastNum != 4{
+                return 4
+            }else if squares[8] == false && squares[4] == false && squares[0] == nil && lastNum != 0{
+                return 0
+            }else if squares[2] == false && squares[4] == false && squares[6] == nil && lastNum != 6{
+                return 6
+            }else if squares[2] == false && squares[6] == false && squares[4] == nil && lastNum != 4{
+                return 4
+            }else if squares[6] == false && squares[4] == false && squares[2] == nil && lastNum != 2{
                 return 2
             }
         }
         
         for var i = 0; i <= 2; i++ {
-            if squares[i*3] == true && squares[i*3 + 1] == true && squares[i*3 + 2] == nil{
+            if squares[i*3] == true && squares[i*3 + 1] == true && squares[i*3 + 2] == nil && lastNum != i*3 + 2{
                 return i*3 + 2
-            }else if squares[i*3] == true && squares[i*3 + 2] == true && squares[i*3 + 1] == nil{
+            }else if squares[i*3] == true && squares[i*3 + 2] == true && squares[i*3 + 1] == nil && lastNum != i*3 + 1{
                 return i*3 + 1
-            }else if squares[i*3 + 1] == true && squares[i*3 + 2] == true && squares[i*3] == nil{
+            }else if squares[i*3 + 1] == true && squares[i*3 + 2] == true && squares[i*3] == nil && lastNum != i*3{
                 return i*3
-            }else if squares[i] == true && squares[i+3] == true && squares[i+6] == nil{
+            }else if squares[i] == true && squares[i+3] == true && squares[i+6] == nil && lastNum != i+6{
                 return i+6
-            }else if squares[i] == true && squares[i+6] == true && squares[i+3] == nil{
+            }else if squares[i] == true && squares[i+6] == true && squares[i+3] == nil && lastNum != i+3{
                 return i+3
-            }else if squares[i+6] == true && squares[i+3] == true && squares[i] == nil{
+            }else if squares[i+6] == true && squares[i+3] == true && squares[i] == nil && lastNum != i{
                 return i
-            }else if squares[0] == true && squares[4] == true && squares[8] == nil{
+            }else if squares[0] == true && squares[4] == true && squares[8] == nil && lastNum != 8{
                 return 8
-            }else if squares[0] == true && squares[8] == false && squares[4] == nil{
+            }else if squares[0] == true && squares[8] == false && squares[4] == nil && lastNum != 4{
                 return 4
-            }else if squares[8] == true && squares[4] == true && squares[0] == nil{
+            }else if squares[8] == true && squares[4] == true && squares[0] == nil && lastNum != 0{
                 return 0
-            }else if squares[2] == true && squares[4] == true && squares[6] == nil{
+            }else if squares[2] == true && squares[4] == true && squares[6] == nil && lastNum != 6{
                 return 6
-            }else if squares[2] == true && squares[6] == true && squares[4] == nil{
+            }else if squares[2] == true && squares[6] == true && squares[4] == nil && lastNum != 4{
                 return 4
-            }else if squares[6] == true && squares[4] == true && squares[2] == nil{
+            }else if squares[6] == true && squares[4] == true && squares[2] == nil && lastNum != 2{
                 return 2
             }
         }
         
-        if squares[4] == nil{
+        if squares[4] == nil && lastNum != 4{
             
             return 4
             
         }
         
+        if lastNum == 100{
+            
+            var randomNum = hajikko[Int(arc4random_uniform(UInt32(hajikko.count)))]
+            
+            while squares[randomNum] != nil{
+                
+                randomNum = hajikko[Int(arc4random_uniform(UInt32(hajikko.count)))]
+                
+            }
+            
+            return randomNum
+            
+        }
+        
+        if squares[0] != nil && squares[2] != nil && squares[6] != nil && squares[8] != nil{
+            
+            var a = aida[Int(arc4random_uniform(UInt32(aida.count)))]
+            
+            while squares[a] != nil || lastNum == a{
+                
+                a = aida[Int(arc4random_uniform(UInt32(aida.count)))]
+                
+            }
+            
+            return  a
+            
+        }
+        
+        var randomNum = hajikko[Int(arc4random_uniform(UInt32(hajikko.count)))]
+        
+        while squares[randomNum] != nil || lastNum == randomNum{
+            
+            
+            
+            randomNum = hajikko[Int(arc4random_uniform(UInt32(hajikko.count)))]
+            
+            if squares[0] != nil && squares[2] != nil && squares[6] != nil && lastNum == 8{
+                
+                var a = aida[Int(arc4random_uniform(UInt32(aida.count)))]
+                
+                while squares[a] != nil || lastNum == a{
+                    
+                    a = aida[Int(arc4random_uniform(UInt32(aida.count)))]
+                    
+                }
+                
+                return  a
+                
+            }
+            
+            if squares[0] != nil && squares[2] != nil && squares[8] != nil && lastNum == 6{
+                
+                var a = aida[Int(arc4random_uniform(UInt32(aida.count)))]
+                
+                while squares[a] != nil || lastNum == a{
+                    
+                    a = aida[Int(arc4random_uniform(UInt32(aida.count)))]
+                    
+                }
+                
+                return  a
+
+                
+            }
+            
+            if squares[0] != nil && squares[8] != nil && squares[6] != nil && lastNum == 2{
+                
+                var a = aida[Int(arc4random_uniform(UInt32(aida.count)))]
+                
+                while squares[a] != nil || lastNum == a{
+                    
+                    a = aida[Int(arc4random_uniform(UInt32(aida.count)))]
+                    
+                }
+                
+                return  a
+                
+            }
+            
+            if squares[8] != nil && squares[2] != nil && squares[6] != nil && lastNum == 0{
+                
+                var a = aida[Int(arc4random_uniform(UInt32(aida.count)))]
+                
+                while squares[a] != nil || lastNum == a{
+                    
+                    a = aida[Int(arc4random_uniform(UInt32(aida.count)))]
+                    
+                }
+                
+                return  a
+                
+            }
+        }
+        
+        return randomNum
+        
+    }
+    
+    func hanteiHard() -> Int {
+        
+        let lastNum = CPUArray[2]
+        
+        if CPUArray[2] != 100{
+            jikeshi2()
+            squares[CPUArray[2]] = nil
+        }
+        
+        let maruLast = myArray[2]
+        
+        if myArray[2] != 100{
+            
+            squares[myArray[2]] = nil
+            
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        var playerReachNum = 0
+        
+        var isReachPlayer = false
+        
+        //リーチを検出
+        
+        for var i = 0; i <= 2; i++ {
+            if squares[i*3] == true && squares[i*3 + 1] == true && squares[i*3 + 2] == nil && lastNum != i*3 + 2 && maruLast != i*3 + 2{
+                playerReachNum = i*3 + 2
+                isReachPlayer = true
+                break
+            }else if squares[i*3] == true && squares[i*3 + 2] == true && squares[i*3 + 1] == nil && lastNum != i*3 + 1 && maruLast != i*3 + 1{
+                playerReachNum = i*3 + 1
+                isReachPlayer = true
+                break
+            }else if squares[i*3 + 1] == true && squares[i*3 + 2] == true && squares[i*3] == nil && lastNum != i*3 && maruLast != i*3{
+                playerReachNum = i*3
+                isReachPlayer = true
+                break
+            }else if squares[i] == true && squares[i+3] == true && squares[i+6] == nil && lastNum != i+6 && maruLast != i+6{
+                playerReachNum = i+6
+                isReachPlayer = true
+                break
+            }else if squares[i] == true && squares[i+6] == true && squares[i+3] == nil && lastNum != i+3 && maruLast != i+3{
+                playerReachNum = i+3
+                isReachPlayer = true
+                break
+            }else if squares[i+6] == true && squares[i+3] == true && squares[i] == nil && lastNum != i && maruLast != i{
+                playerReachNum = i
+                isReachPlayer = true
+                break
+            }else if squares[0] == true && squares[4] == true && squares[8] == nil && lastNum != 8 && maruLast != 8{
+                playerReachNum = 8
+                isReachPlayer = true
+                break
+            }else if squares[0] == true && squares[8] == false && squares[4] == nil && lastNum != 4 && maruLast != 4{
+                playerReachNum = 4
+                isReachPlayer = true
+                break
+            }else if squares[8] == true && squares[4] == true && squares[0] == nil && lastNum != 0 && maruLast != 0{
+                playerReachNum = 0
+                isReachPlayer = true
+                break
+            }else if squares[2] == true && squares[4] == true && squares[6] == nil && lastNum != 6 && maruLast != 6{
+                playerReachNum = 6
+                isReachPlayer = true
+                break
+            }else if squares[2] == true && squares[6] == true && squares[4] == nil && lastNum != 4 && maruLast != 4{
+                playerReachNum = 4
+                isReachPlayer = true
+                break
+            }else if squares[6] == true && squares[4] == true && squares[2] == nil && lastNum != 2 && maruLast != 2{
+                playerReachNum = 2
+                isReachPlayer = true
+                break
+            }
+            
+        }
+        
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        
+        var comReachNum = 0
+        
+        var isReachCom = false
+        
+        for var i = 0; i <= 2; i++ {
+            
+            if squares[i*3] == false && squares[i*3 + 1] == false && squares[i*3 + 2] == nil && lastNum != i*3 + 2 && maruLast != i*3+2{
+                comReachNum = i*3+2
+                isReachCom = true
+                break
+            }else if squares[i*3] == false && squares[i*3 + 2] == false && squares[i*3 + 1] == nil && lastNum != i*3 + 1 && maruLast != i*3+1{
+                comReachNum = i*3+1
+                isReachCom = true
+                break
+            }else if squares[i*3 + 1] == false && squares[i*3 + 2] == false && squares[i*3] == nil && lastNum != i*3 && maruLast != i*3{
+                comReachNum = i*3
+                isReachCom = true
+                break
+            }else if squares[i] == false && squares[i+3] == false && squares[i+6] == nil && lastNum != i+6 && maruLast != i+6{
+                comReachNum = i+6
+                isReachCom = true
+                break
+            }else if squares[i] == false && squares[i+6] == false && squares[i+3] == nil && lastNum != i+3 && maruLast != i+3{
+                comReachNum = i+3
+                isReachCom = true
+                break
+            }else if squares[i+6] == false && squares[i+3] == false && squares[i] == nil && lastNum != i && maruLast != i{
+                comReachNum = i
+                isReachCom = true
+                break
+            }else if squares[0] == false && squares[4] == false && squares[8] == nil && lastNum != 8 && maruLast != 8{
+                comReachNum = 8
+                isReachCom = true
+                break
+            }else if squares[0] == false && squares[8] == false && squares[4] == nil && lastNum != 4 && maruLast != 4{
+                comReachNum = 4
+                isReachCom = true
+                break
+            }else if squares[8] == false && squares[4] == false && squares[0] == nil && lastNum != 0 && maruLast != 0{
+                comReachNum = 0
+                isReachCom = true
+                break
+            }else if squares[2] == false && squares[4] == false && squares[6] == nil && lastNum != 6 && maruLast != 6{
+                comReachNum = 6
+                isReachCom = true
+                break
+            }else if squares[2] == false && squares[6] == false && squares[4] == nil && lastNum != 4 && maruLast != 4{
+                comReachNum = 4
+                isReachCom = true
+                break
+            }else if squares[6] == false && squares[4] == false && squares[2] == nil && lastNum != 2 && maruLast != 2{
+                comReachNum = 2
+                isReachCom = true
+                break
+            }
+        }
+        
+        ////////////////////////////////////////////////////////////////////////////////////////
+        
+        if isReachPlayer == true && isReachCom == false{
+            
+            myArray[2] = maruLast
+            if myArray[2] != 100{
+                squares[myArray[2]] = true
+            }
+            
+            return playerReachNum
+            
+        }
+        
+        if isReachPlayer == true && isReachCom == true{
+            
+            myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+            
+            if CPUScore == 4{
+                return comReachNum
+            }
+            
+            if myScore <= CPUScore && arc4random_uniform(2) == 1{
+                return comReachNum
+            }else{
+                return playerReachNum
+            }
+            
+        }
+        
+        if isReachPlayer == false && isReachCom == true{
+            
+            myArray[2] = maruLast
+            if myArray[2] != 100{
+                squares[myArray[2]] = true
+            }
+            
+            return comReachNum
+            
+        }
+        
+        //詰まされ潰し
+        
+        for var i = 0; i < 3; i++ {
+            
+            if CPUArray[1] == i*3 && myArray[0] == i*3+1 && squares[i*3+2] == nil && lastNum != i*3+2 && maruLast != i*3+2{
+                print("1")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i*3+2
+            }
+            if CPUArray[1] == i*3 && myArray[0] == i*3+2 && squares[i*3+1] == nil && lastNum != i*3+1 && maruLast != i*3+1{
+                print("2")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i*3+1
+            }
+            if CPUArray[1] == i*3+1 && myArray[0] == i*3 && squares[i*3+2] == nil && lastNum != i*3+2 && maruLast != i*3+2{
+                print("3")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i*3+2
+            }
+            if CPUArray[1] == i*3+2 && myArray[0] == i*3 && squares[i*3+1] == nil && lastNum != i*3+1 && maruLast != i*3+1{
+                print("4")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i*3+1
+            }
+            if CPUArray[1] == i*3+2 && myArray[0] == i*3+1 && squares[i*3] == nil && lastNum != i*3 && maruLast != i*3{
+                print("5")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i*3
+            }
+            if CPUArray[1] == i*3+1 && myArray[0] == i*3+2 && squares[i*3] == nil && lastNum != i*3 && maruLast != i*3{
+                print("6")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i*3
+            }
+            
+            
+            
+            if CPUArray[1] == i && myArray[0] == i+3 && squares[i+6] == nil && lastNum != i+6 && maruLast != i+6{
+                print("7")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i+6
+            }
+            if CPUArray[1] == i && myArray[0] == i+6 && squares[i+3] == nil && lastNum != i+3 && maruLast != i+3{
+                print("8")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i+3
+            }
+            if CPUArray[1] == i+3 && myArray[0] == i && squares[i+6] == nil && lastNum != i+6 && maruLast != i+6{
+                print("9")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i+6
+            }
+            if CPUArray[1] == i+6 && myArray[0] == i && squares[i+3] == nil && lastNum != i+3 && maruLast != i+3{
+                print("10")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i+3
+            }
+            if CPUArray[1] == i+6 && myArray[0] == i+3 && squares[i] == nil && lastNum != i && maruLast != i{
+                print("11")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i
+            }
+            if CPUArray[1] == i+3 && myArray[0] == i+6 && squares[i] == nil && lastNum != i && maruLast != i{
+                print("12")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i
+            }
+            
+            
+            
+            if CPUArray[1] == 0 && myArray[0] == 4 && squares[8] == nil && lastNum != 8 && maruLast != 8{
+                print("13")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return 8
+            }
+            if CPUArray[1] == 0 && myArray[0] == 8 && squares[4] == nil && lastNum != 4 && maruLast != 4{
+                print("14")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return 4
+            }
+            if CPUArray[1] == 4 && myArray[0] == 0 && squares[8] == nil && lastNum != 8 && maruLast != 8{
+                print("15")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return 8
+            }
+            if CPUArray[1] == 8 && myArray[0] == 0 && squares[4] == nil && lastNum != 4 && maruLast != 4{
+                print("16")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return 4
+            }
+            if CPUArray[1] == 8 && myArray[0] == 4 && squares[0] == nil && lastNum != 0 && maruLast != 0{
+                print("17")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return 0
+            }
+            if CPUArray[1] == 4 && myArray[0] == 8 && squares[0] == nil && lastNum != 0 && maruLast != 0{
+                print("18")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return 0
+            }
+            
+            
+            
+            if CPUArray[1] == 2 && myArray[0] == 4 && squares[6] == nil && lastNum != 6 && maruLast != 6{
+                print("19")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return 6
+            }
+            if CPUArray[1] == 2 && myArray[0] == 6 && squares[4] == nil && lastNum != 4 && maruLast != 4{
+                print("20")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return 4
+            }
+            if CPUArray[1] == 4 && myArray[0] == 2 && squares[6] == nil && lastNum != 6 && maruLast != 6{
+                print("21")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return 6
+            }
+            if CPUArray[1] == 6 && myArray[0] == 2 && squares[4] == nil && lastNum != 4 && maruLast != 4{
+                print("22")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return 4
+            }
+            if CPUArray[1] == 6 && myArray[0] == 4 && squares[2] == nil && lastNum != 2 && maruLast != 2{
+                print("23")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return 2
+            }
+            if CPUArray[1] == 4 && myArray[0] == 6 && squares[2] == nil && lastNum != 2 && maruLast != 2{
+                print("24")
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return 2
+            }
+            
+        }
+        
+        //詰ませにいく
+        
+        for var i = 0; i < 3; i++ {
+            
+            if squares[i*3] == false && squares[i*3+1] == nil && squares[i*3+2] == nil && lastNum != i*3+1 && maruLast == i*3+2{
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i*3+1
+            }
+            if squares[i*3] == false && squares[i*3+1] == nil && squares[i*3+2] == nil && lastNum != i*3+2 && maruLast == i*3+1{
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i*3+2
+            }
+            if squares[i*3] == nil && squares[i*3+1] == false && squares[i*3+2] == nil && lastNum != i*3 && maruLast == i*3+2{
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i*3
+            }
+            if squares[i*3] == nil && squares[i*3+1] == false && squares[i*3+2] == nil && lastNum != i*3+2 && maruLast == i*3{
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i*3+2
+            }
+            if squares[i*3] == nil && squares[i*3+1] == nil && squares[i*3+2] == false && lastNum != i*3 && maruLast == i*3+1{
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i*3
+            }
+            if squares[i*3] == nil && squares[i*3+1] == nil && squares[i*3+2] == false && lastNum != i*3+1 && maruLast == i*3{
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i*3+1
+            }
+            if squares[i] == false && squares[i+3] == nil && squares[i+6] == nil && lastNum != i+3 && maruLast == i+6{
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i+3
+            }
+            if squares[i] == false && squares[i+3] == nil && squares[i+6] == nil && lastNum != i+6 && maruLast == i+3{
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i+6
+            }
+            if squares[i] == nil && squares[i+3] == false && squares[i+6] == nil && lastNum != i && maruLast == i+6{
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i
+            }
+            if squares[i] == nil && squares[i+3] == false && squares[i+6] == nil && lastNum != i+6 && maruLast == i{
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i+6
+            }
+            if squares[i] == nil && squares[i+3] == nil && squares[i+6] == false && lastNum != i && maruLast == i+3{
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i
+            }
+            if squares[i] == nil && squares[i+3] == nil && squares[i+6] == false && lastNum != i+3 && maruLast == i{
+                myArray[2] = maruLast
+                if myArray[2] != 100{
+                    squares[myArray[2]] = true
+                }
+                return i+3
+            }
+        }
+        if squares[0] == false && squares[4] == nil && squares[8] == nil && lastNum != 4 && maruLast == 8{
+            myArray[2] = maruLast
+            if myArray[2] != 100{
+                squares[myArray[2]] = true
+            }
+            return 4
+        }
+        if squares[0] == false && squares[4] == nil && squares[8] == nil && lastNum != 8 && maruLast == 4{
+            myArray[2] = maruLast
+            if myArray[2] != 100{
+                squares[myArray[2]] = true
+            }
+            return 8
+        }
+        if squares[0] == nil && squares[4] == false && squares[8] == nil && lastNum != 0 && maruLast == 8{
+            myArray[2] = maruLast
+            if myArray[2] != 100{
+                squares[myArray[2]] = true
+            }
+            return 0
+        }
+        if squares[0] == nil && squares[4] == false && squares[8] == nil && lastNum != 8 && maruLast == 0{
+            myArray[2] = maruLast
+            if myArray[2] != 100{
+                squares[myArray[2]] = true
+            }
+            return 8
+        }
+        if squares[0] == nil && squares[4] == nil && squares[8] == false && lastNum != 0 && maruLast == 4{
+            myArray[2] = maruLast
+            if myArray[2] != 100{
+                squares[myArray[2]] = true
+            }
+            return 0
+        }
+        if squares[0] == nil && squares[4] == nil && squares[8] == false && lastNum != 4 && maruLast == 0{
+            myArray[2] = maruLast
+            if myArray[2] != 100{
+                squares[myArray[2]] = true
+            }
+            return 4
+        }
+        if squares[2] == false && squares[4] == nil && squares[6] == nil && lastNum != 4 && maruLast == 6{
+            myArray[2] = maruLast
+            if myArray[2] != 100{
+                squares[myArray[2]] = true
+            }
+            return 4
+        }
+        if squares[2] == false && squares[4] == nil && squares[6] == nil && lastNum != 6 && maruLast == 4{
+            myArray[2] = maruLast
+            if myArray[2] != 100{
+                squares[myArray[2]] = true
+            }
+            return 6
+        }
+        if squares[2] == nil && squares[4] == false && squares[6] == nil && lastNum != 2 && maruLast == 6{
+            myArray[2] = maruLast
+            if myArray[2] != 100{
+                squares[myArray[2]] = true
+            }
+            return 2
+        }
+        if squares[2] == nil && squares[4] == false && squares[6] == nil && lastNum != 6 && maruLast == 2{
+            myArray[2] = maruLast
+            if myArray[2] != 100{
+                squares[myArray[2]] = true
+            }
+            return 6
+        }
+        if squares[2] == nil && squares[4] == nil && squares[6] == false && lastNum != 2 && maruLast == 4{
+            myArray[2] = maruLast
+            if myArray[2] != 100{
+                squares[myArray[2]] = true
+            }
+            return 2
+        }
+        if squares[2] == nil && squares[4] == nil && squares[6] == false && lastNum != 4 && maruLast == 2{
+            myArray[2] = maruLast
+            if myArray[2] != 100{
+                squares[myArray[2]] = true
+            }
+            return 4
+        }
         
         
-        return hajikko[Int(arc4random_uniform(UInt32(hajikko.count)))]
         
+        myArray[2] = maruLast
+        
+        if myArray[2] != 100{
+            squares[myArray[2]] = true
+        }
+        
+        if squares[4] == nil && lastNum != 4{
+            return 4
+        }
+        
+        if lastNum == 100{
+            
+            var randomNum = hajikko[Int(arc4random_uniform(UInt32(hajikko.count)))]
+            
+            while squares[randomNum] != nil{
+                
+                randomNum = hajikko[Int(arc4random_uniform(UInt32(hajikko.count)))]
+                
+            }
+            
+            return randomNum
+            
+        }
+        
+        if squares[0] != nil && squares[2] != nil && squares[6] != nil && squares[8] != nil{
+            
+            var a = aida[Int(arc4random_uniform(UInt32(aida.count)))]
+            
+            while squares[a] != nil || lastNum == a{
+                
+                a = aida[Int(arc4random_uniform(UInt32(aida.count)))]
+                
+            }
+            return  a
+            
+        }
+        
+        var randomNum = hajikko[Int(arc4random_uniform(UInt32(hajikko.count)))]
+        
+        while squares[randomNum] != nil || lastNum == randomNum{
+            
+            
+            
+            randomNum = hajikko[Int(arc4random_uniform(UInt32(hajikko.count)))]
+            
+            if squares[0] != nil && squares[2] != nil && squares[6] != nil && lastNum == 8{
+                
+                var a = aida[Int(arc4random_uniform(UInt32(aida.count)))]
+                
+                while squares[a] != nil || lastNum == a{
+                    
+                    a = aida[Int(arc4random_uniform(UInt32(aida.count)))]
+                    
+                }
+                
+                return  a
+                
+            }
+            
+            if squares[0] != nil && squares[2] != nil && squares[8] != nil && lastNum == 6{
+                
+                var a = aida[Int(arc4random_uniform(UInt32(aida.count)))]
+                
+                while squares[a] != nil || lastNum == a{
+                    
+                    a = aida[Int(arc4random_uniform(UInt32(aida.count)))]
+                    
+                }
+                return  a
+                
+                
+            }
+            
+            if squares[0] != nil && squares[8] != nil && squares[6] != nil && lastNum == 2{
+                
+                var a = aida[Int(arc4random_uniform(UInt32(aida.count)))]
+                
+                while squares[a] != nil || lastNum == a{
+                    
+                    a = aida[Int(arc4random_uniform(UInt32(aida.count)))]
+                    
+                }
+                
+                return  a
+                
+            }
+            
+            if squares[8] != nil && squares[2] != nil && squares[6] != nil && lastNum == 0{
+                
+                var a = aida[Int(arc4random_uniform(UInt32(aida.count)))]
+                
+                while squares[a] != nil || lastNum == a{
+                    
+                    a = aida[Int(arc4random_uniform(UInt32(aida.count)))]
+                    
+                }
+                
+                return  a
+                
+            }
+        }
+        return randomNum
     }
     
     func mokkai(){
@@ -517,8 +1340,6 @@ class ViewController: UIViewController {
         
         lab.text = nil
         
-        count = 0
-
         clear = nil
         
         mokkaiButton.hidden = true
@@ -535,40 +1356,144 @@ class ViewController: UIViewController {
         
         myScore = 0
         CPUScore = 0
-        scoreLab.text = String("\(myScore):\(CPUScore)")
+        scoreLab.text = String("\(myScore) : \(CPUScore)")
         
     }
     
     func ranking(score:Int){
         
-        for var i = 0; i < 5; i++ {
-            
-            if highscores[i] < score{
+        var junni = 0
+        
+        var new = false
+        
+        if level == 0{
+            for var i = 0; i < 5; i++ {
                 
-                for var j = 4; j > i; j-- {
+                if highscoresEasy[i] < score{
                     
-                    highscores[j] = highscores[j - 1]
+                    for var j = 4; j > i; j-- {
+                        
+                        highscoresEasy[j] = highscoresEasy[j - 1]
+                        
+                    }
+                    
+                    highscoresEasy[i] = score
+                    
+                    junni = i + 1
+                    
+                    easy1 = highscoresEasy[0]
+                    easy2 = highscoresEasy[1]
+                    easy3 = highscoresEasy[2]
+                    easy4 = highscoresEasy[3]
+                    easy5 = highscoresEasy[4]
+                    
+                    ud.setInteger(easy1, forKey: "zeroe")
+                    ud.setInteger(easy2, forKey: "onee")
+                    ud.setInteger(easy3, forKey: "twoe")
+                    ud.setInteger(easy4, forKey: "threee")
+                    ud.setInteger(easy5, forKey: "foure")
+                    
+                    newRecord = true
+                    
+                    new = true
+                    
+                    break
                     
                 }
+            }
+        }
+        
+        if level == 1{
+            for var i = 0; i < 5; i++ {
                 
-                highscores[i] = score
+                if highscoresNormal[i] < score{
+                    
+                    for var j = 4; j > i; j-- {
+                        
+                        highscoresNormal[j] = highscoresNormal[j - 1]
+                        
+                    }
+                    
+                    highscoresNormal[i] = score
+                    
+                    junni = i + 1
+                    
+                    normal1 = highscoresNormal[0]
+                    normal2 = highscoresNormal[1]
+                    normal3 = highscoresNormal[2]
+                    normal4 = highscoresNormal[3]
+                    normal5 = highscoresNormal[4]
+                    
+                    ud.setInteger(normal1, forKey: "zero")
+                    ud.setInteger(normal2, forKey: "one")
+                    ud.setInteger(normal3, forKey: "two")
+                    ud.setInteger(normal4, forKey: "three")
+                    ud.setInteger(normal5, forKey: "four")
+                    
+                    newRecord = true
+                    
+                    new = true
+                    
+                    break
+                    
+                }
+            }
+        }
+        
+        if level == 2{
+            for var i = 0; i < 5; i++ {
                 
-                no1 = highscores[0]
-                no2 = highscores[1]
-                no3 = highscores[2]
-                no4 = highscores[3]
-                no5 = highscores[4]
-                
-                ud.setInteger(no1, forKey: "zero")
-                ud.setInteger(no2, forKey: "one")
-                ud.setInteger(no3, forKey: "two")
-                ud.setInteger(no4, forKey: "three")
-                ud.setInteger(no5, forKey: "four")
-                
-                break
-                
+                if highscoresHard[i] < score{
+                    
+                    for var j = 4; j > i; j-- {
+                        
+                        highscoresHard[j] = highscoresHard[j - 1]
+                        
+                    }
+                    
+                    highscoresHard[i] = score
+                    
+                    junni = i + 1
+                    
+                    hard1 = highscoresHard[0]
+                    hard2 = highscoresHard[1]
+                    hard3 = highscoresHard[2]
+                    hard4 = highscoresHard[3]
+                    hard5 = highscoresHard[4]
+                    
+                    ud.setInteger(hard1, forKey: "zeroh")
+                    ud.setInteger(hard2, forKey: "oneh")
+                    ud.setInteger(hard3, forKey: "twoh")
+                    ud.setInteger(hard4, forKey: "threeh")
+                    ud.setInteger(hard5, forKey: "fourh")
+                    
+                    newRecord = true
+                    
+                    new = true
+                    
+                    break
+                    
+                }
+            }
+        }
+        
+        if new == true{
+            
+            let alertController = UIAlertController(title: "ランクイン！", message: "\(score)連勝で\(junni)位にランクイン！\nこの素晴らしい成績をtwitterで友達に自慢しよう！", preferredStyle: .Alert)
+            let otherAction = UIAlertAction(title: "今はいい", style: .Default) {
+                action in
             }
             
+            let cancelAction = UIAlertAction(title: "そうする！！", style: .Cancel) {
+                action in
+                let twitterPostView:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)!
+                
+                twitterPostView.setInitialText("激ムズマルバツで\(self.levelname[level])COM相手に\(score)連勝しました!この記録に勝てるかなぁぁぁ？？？\nhttps://t.co/FdHzswrWhR#激ムズマルバツ")
+                self.presentViewController(twitterPostView, animated: true, completion: nil)
+            }
+            alertController.addAction(otherAction)
+            alertController.addAction(cancelAction)
+            presentViewController(alertController, animated: true, completion: nil)
         }
         
     }
@@ -620,6 +1545,41 @@ class ViewController: UIViewController {
             lab9.text = nil
         }
         
+    }
+    
+    @IBAction func tapEndGame(){
+        
+        ranking(wins)
+        
+        wins = 0
+        
+    }
+    
+    private func getAdBannerView() -> GADBannerView {
+        var bannerView: GADBannerView = GADBannerView()
+        bannerView = GADBannerView(adSize:kGADAdSizeBanner)
+        bannerView.frame.size = CGSizeMake(self.view.frame.width, bannerView.frame.height)
+        bannerView.frame.origin = CGPointMake(0, self.view.frame.size.height - bannerView.frame.height)
+        bannerView.adUnitID = "ca-app-pub-7292261742464348/4064322316" // Enter Ad's ID here
+        bannerView.delegate = self
+        bannerView.rootViewController = self
+        
+        let request:GADRequest = GADRequest()
+        //        request.testDevices = [GAD_SIMULATOR_ID]
+        bannerView.loadRequest(request)
+        //
+        return bannerView
+    }
+    
+    func createAndLoadInterstitial()->GADInterstitial {
+        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-7292261742464348/4535421912")
+        interstitial?.delegate = self
+        let gadRequest:GADRequest = GADRequest()
+        //gadRequest.testDevices = [kGADSimulatorID]  // テスト時のみ
+        interstitial?.loadRequest(gadRequest)
+        
+        
+        return interstitial!
     }
 }
 

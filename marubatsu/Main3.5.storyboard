@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TCf-WB-rKq">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="0Cf-U9-t9u">
+            <objects>
+                <viewController id="TCf-WB-rKq" customClass="HomeViewController" customModule="marubatsu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uoL-S5-0h5"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZZU-Dt-CpI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ya5-Bn-jGu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPL-LK-lNa">
+                                <rect key="frame" x="169" y="375" width="135" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Ranking" backgroundImage="standardbutton.png">
+                                    <color key="titleColor" red="0.9806453624" green="0.9806453624" blue="0.9806453624" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapRanking" destination="TCf-WB-rKq" eventType="touchUpInside" id="zPQ-4X-Z1y"/>
+                                    <segue destination="TDc-Iq-5hM" kind="modal" modalTransitionStyle="flipHorizontal" id="KGR-Pa-3So"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GAME MODE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgy-Jm-07W">
+                                <rect key="frame" x="108" y="200" width="105" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tu-YS-34U">
+                                <rect key="frame" x="16" y="375" width="135" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="How to play" backgroundImage="standardbutton.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapHowtoplay" destination="TCf-WB-rKq" eventType="touchDown" id="aYk-An-IIr"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="titleMarubatsuPattern6.png" translatesAutoresizingMaskIntoConstraints="NO" id="RPy-58-ZpX">
+                                <rect key="frame" x="10" y="10" width="299" height="195"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtt-pd-UNr">
+                                <rect key="frame" x="60" y="237" width="200" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" backgroundImage="player1button.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showAlert" destination="TCf-WB-rKq" eventType="touchUpInside" id="nQU-Ej-oOM"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="notification.png" translatesAutoresizingMaskIntoConstraints="NO" id="er5-qS-x1I">
+                                <rect key="frame" x="286" y="373" width="23" height="23"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9tY-iF-hUv">
+                                <rect key="frame" x="60" y="303" width="200" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" backgroundImage="p2button.png">
+                                    <color key="titleColor" red="0.9806453624" green="0.9806453624" blue="0.9806453624" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="f0Q-KL-F6f" kind="modal" modalTransitionStyle="flipHorizontal" id="Kaf-Mp-qj1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.00071137824410000001" green="0.55760679849999994" blue="0.017266727579999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="notificationIcon" destination="er5-qS-x1I" id="UGR-3s-TfK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q8j-sn-AuM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="140"/>
+        </scene>
+        <!--Ranking View Controller-->
+        <scene sceneID="2CQ-M5-Iba">
+            <objects>
+                <viewController id="TDc-Iq-5hM" customClass="RankingViewController" customModule="marubatsu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yMn-OZ-ivT"/>
+                        <viewControllerLayoutGuide type="bottom" id="Are-0h-Bia"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bcC-zs-pko">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RANKING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vV-HM-j2u">
+                                <rect key="frame" x="40" y="14" width="240" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FzV-Gt-tec">
+                                <rect key="frame" x="35" y="141" width="250" height="40"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fo2-Au-oYJ">
+                                <rect key="frame" x="35" y="246" width="250" height="40"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ue-ft-GEK">
+                                <rect key="frame" x="35" y="301" width="250" height="40"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urj-1S-fRH">
+                                <rect key="frame" x="35" y="191" width="250" height="40"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYP-8r-HPG">
+                                <rect key="frame" x="35" y="356" width="250" height="40"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1人プレイモードでの連勝記録" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwz-bv-m2r">
+                                <rect key="frame" x="33" y="66" width="255" height="21"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="n22-Vi-MWH">
+                                <rect key="frame" x="51" y="98" width="218" height="29"/>
+                                <segments>
+                                    <segment title="EASY"/>
+                                    <segment title="NORMAL"/>
+                                    <segment title="HARD"/>
+                                </segments>
+                                <color key="tintColor" red="0.9806453624" green="0.9806453624" blue="0.9806453624" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="changeLevel" destination="TDc-Iq-5hM" eventType="touchUpInside" id="wfZ-mT-Qfw"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3q-hJ-RuT">
+                                <rect key="frame" x="102" y="412" width="117" height="43"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="30"/>
+                                <state key="normal" title="戻る" backgroundImage="standardbutton.png">
+                                    <color key="titleColor" red="0.9806453624" green="0.9806453624" blue="0.9806453624" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="TCf-WB-rKq" kind="modal" modalTransitionStyle="flipHorizontal" id="1C3-Qz-cNI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.00071137824410000001" green="0.55760679849999994" blue="0.017266727579999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="label1" destination="FzV-Gt-tec" id="RsG-OR-AgX"/>
+                        <outlet property="label2" destination="urj-1S-fRH" id="p4b-Yp-U5l"/>
+                        <outlet property="label3" destination="fo2-Au-oYJ" id="Fb7-sG-fDH"/>
+                        <outlet property="label4" destination="3Ue-ft-GEK" id="eyl-4o-cJZ"/>
+                        <outlet property="label5" destination="KYP-8r-HPG" id="SjW-pD-1Pz"/>
+                        <outlet property="levelsegment" destination="n22-Vi-MWH" id="4An-z2-cmN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gn2-PH-SCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="735"/>
+        </scene>
+        <!--Vs View Controller-->
+        <scene sceneID="5YD-8h-eQd">
+            <objects>
+                <viewController id="f0Q-KL-F6f" customClass="vsViewController" customModule="marubatsu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RRK-fY-UpW"/>
+                        <viewControllerLayoutGuide type="bottom" id="lql-Kx-Xl7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jdh-dY-l43">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Yt-MB-dv5">
+                                <rect key="frame" x="9" y="82" width="100" height="100"/>
+                                <state key="normal" backgroundImage="cardFuchi.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tap0" destination="f0Q-KL-F6f" eventType="touchUpInside" id="fjt-F7-WYF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOH-Jq-8TZ">
+                                <rect key="frame" x="110" y="82" width="100" height="100"/>
+                                <state key="normal" backgroundImage="cardFuchi.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tap1" destination="f0Q-KL-F6f" eventType="touchUpInside" id="SZy-18-vgB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKp-PP-Xx0">
+                                <rect key="frame" x="211" y="82" width="100" height="100"/>
+                                <state key="normal" backgroundImage="cardFuchi.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tap2" destination="f0Q-KL-F6f" eventType="touchUpInside" id="iqn-jk-mJe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78V-Vl-JlH">
+                                <rect key="frame" x="9" y="183" width="100" height="100"/>
+                                <state key="normal" backgroundImage="cardFuchi.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tap3" destination="f0Q-KL-F6f" eventType="touchUpInside" id="GFv-YB-wew"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWv-D6-8X3">
+                                <rect key="frame" x="110" y="183" width="100" height="100"/>
+                                <state key="normal" backgroundImage="cardFuchi.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tap4" destination="f0Q-KL-F6f" eventType="touchUpInside" id="9wd-a3-1zd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkP-r9-47a">
+                                <rect key="frame" x="211" y="183" width="100" height="100"/>
+                                <state key="normal" backgroundImage="cardFuchi.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tap5" destination="f0Q-KL-F6f" eventType="touchUpInside" id="pPg-3o-Wdw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WvO-b9-nIR">
+                                <rect key="frame" x="211" y="284" width="100" height="100"/>
+                                <state key="normal" backgroundImage="cardFuchi.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tap8" destination="f0Q-KL-F6f" eventType="touchUpInside" id="9Cq-26-aNL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3JN-Cm-JKV">
+                                <rect key="frame" x="110" y="284" width="100" height="100"/>
+                                <state key="normal" backgroundImage="cardFuchi.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tap7" destination="f0Q-KL-F6f" eventType="touchUpInside" id="biE-gj-auy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukc-vp-ank">
+                                <rect key="frame" x="9" y="284" width="100" height="100"/>
+                                <state key="normal" backgroundImage="cardFuchi.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tap6" destination="f0Q-KL-F6f" eventType="touchUpInside" id="aou-Yn-BBV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="◯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bf1-Dn-cQH">
+                                <rect key="frame" x="9" y="82" width="100" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="◯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3P-PD-By1">
+                                <rect key="frame" x="9" y="183" width="100" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="◯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLC-9o-lJ9">
+                                <rect key="frame" x="110" y="82" width="100" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="◯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyr-3y-rUr">
+                                <rect key="frame" x="211" y="82" width="100" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="◯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vM6-IT-Cva">
+                                <rect key="frame" x="110" y="183" width="100" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="◯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4r-PN-wsB">
+                                <rect key="frame" x="211" y="183" width="100" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="◯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03S-na-QMi">
+                                <rect key="frame" x="9" y="284" width="100" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="◯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfq-QN-qot">
+                                <rect key="frame" x="110" y="284" width="100" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="◯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBt-Oj-3Cp">
+                                <rect key="frame" x="211" y="284" width="100" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1Pのターンです" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeI-q8-YI5">
+                                <rect key="frame" x="61" y="17" width="199" height="23"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="19"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fff-Jt-0Gv">
+                                <rect key="frame" x="104" y="390" width="113" height="37"/>
+                                <color key="backgroundColor" red="0.00071137824410000001" green="0.55760679849999994" blue="0.017266727579999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="22"/>
+                                <state key="normal" title="もう1回" backgroundImage="standardbutton.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapMokkai" destination="f0Q-KL-F6f" eventType="touchUpInside" id="TU2-it-RtG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13m-NA-Msl">
+                                <rect key="frame" x="0.0" y="11" width="77" height="27"/>
+                                <color key="backgroundColor" red="0.00071137824410000001" green="0.55760679849999994" blue="0.017266727579999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="15"/>
+                                <state key="normal" title="◁終わる">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="TCf-WB-rKq" kind="modal" modalTransitionStyle="flipHorizontal" id="mqM-pt-tBn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lv-6I-6yL">
+                                <rect key="frame" x="73" y="32" width="174" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="⭕️" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SP4-Hy-lFB">
+                                <rect key="frame" x="34" y="45" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="❌" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRH-wY-Wcv">
+                                <rect key="frame" x="255" y="45" width="49" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.00071137824410000001" green="0.55760679849999994" blue="0.017266727579999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="lab0" destination="bf1-Dn-cQH" id="qp5-V8-mMP"/>
+                        <outlet property="lab1" destination="lLC-9o-lJ9" id="WiA-Pe-rPh"/>
+                        <outlet property="lab2" destination="hyr-3y-rUr" id="HbK-Cx-8wU"/>
+                        <outlet property="lab3" destination="j3P-PD-By1" id="RFF-NR-AOb"/>
+                        <outlet property="lab4" destination="vM6-IT-Cva" id="3ln-zO-vR9"/>
+                        <outlet property="lab5" destination="K4r-PN-wsB" id="gOc-l6-dFB"/>
+                        <outlet property="lab6" destination="03S-na-QMi" id="mNS-Oa-ij2"/>
+                        <outlet property="lab7" destination="mfq-QN-qot" id="YZB-p6-2AH"/>
+                        <outlet property="lab8" destination="dBt-Oj-3Cp" id="QnY-6o-wZx"/>
+                        <outlet property="mokkaibutton" destination="fff-Jt-0Gv" id="g6i-MC-vZF"/>
+                        <outlet property="scoreLab" destination="1lv-6I-6yL" id="aD9-fK-3AX"/>
+                        <outlet property="winloseLab" destination="TeI-q8-YI5" id="n5z-0l-0Ju"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="708-4a-bpu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1284" y="735"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4Z7-5p-Z4O">
+            <objects>
+                <viewController storyboardIdentifier="playfield" id="E8t-Cc-tZ2" customClass="ViewController" customModule="marubatsu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BZP-sP-vka"/>
+                        <viewControllerLayoutGuide type="bottom" id="oY2-r5-dTF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B38-7v-VjE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="◯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbY-0e-9Ds">
+                                <rect key="frame" x="12" y="184" width="100" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="◯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lq9-fj-etq">
+                                <rect key="frame" x="111" y="184" width="100" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="◯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJR-3E-cBB">
+                                <rect key="frame" x="211" y="184" width="100" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="◯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsE-94-9Pv">
+                                <rect key="frame" x="111" y="285" width="100" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="◯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNW-Jv-vJ0">
+                                <rect key="frame" x="212" y="285" width="100" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="◯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4T8-jA-6jw">
+                                <rect key="frame" x="12" y="83" width="100" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="◯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1D-O9-HEB">
+                                <rect key="frame" x="12" y="285" width="100" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="◯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2h-Us-Nuo">
+                                <rect key="frame" x="111" y="83" width="100" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="◯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WuH-M7-MJ8">
+                                <rect key="frame" x="211" y="83" width="100" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGn-uR-3TY">
+                                <rect key="frame" x="212" y="184" width="100" height="100"/>
+                                <state key="normal" backgroundImage="cardFuchi.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tap6" destination="E8t-Cc-tZ2" eventType="touchUpInside" id="g8d-5S-ZDg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUX-Vg-wvx">
+                                <rect key="frame" x="111" y="83" width="100" height="100"/>
+                                <state key="normal" backgroundImage="cardFuchi.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tap2" destination="E8t-Cc-tZ2" eventType="touchUpInside" id="8t3-2H-0T1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jac-zc-0CZ">
+                                <rect key="frame" x="111" y="184" width="100" height="100"/>
+                                <state key="normal" backgroundImage="cardFuchi.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tap5" destination="E8t-Cc-tZ2" eventType="touchUpInside" id="Xkp-cW-z5C"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dF-al-cpv">
+                                <rect key="frame" x="10" y="184" width="100" height="100"/>
+                                <state key="normal" backgroundImage="cardFuchi.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tap4" destination="E8t-Cc-tZ2" eventType="touchUpInside" id="iNc-SV-2wo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QF0-RH-QIr">
+                                <rect key="frame" x="10" y="285" width="100" height="100"/>
+                                <state key="normal" backgroundImage="cardFuchi.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tap7" destination="E8t-Cc-tZ2" eventType="touchUpInside" id="mjD-Y2-ms5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ms6-2Y-eKW">
+                                <rect key="frame" x="212" y="285" width="100" height="100"/>
+                                <state key="normal" backgroundImage="cardFuchi.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tap9" destination="E8t-Cc-tZ2" eventType="touchUpInside" id="u0q-pJ-RJw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUA-1h-REO">
+                                <rect key="frame" x="212" y="83" width="100" height="100"/>
+                                <state key="normal" backgroundImage="cardFuchi.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tap3" destination="E8t-Cc-tZ2" eventType="touchUpInside" id="AKa-v6-F95"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ty4-HJ-cyj">
+                                <rect key="frame" x="111" y="285" width="100" height="100"/>
+                                <state key="normal" backgroundImage="cardFuchi.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tap8" destination="E8t-Cc-tZ2" eventType="touchUpInside" id="oCd-SJ-NS6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fse-RG-tVv">
+                                <rect key="frame" x="117" y="9" width="187" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="aaaa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXo-Ua-pGV">
+                                <rect key="frame" x="85" y="6" width="149" height="45"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="35"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAm-UC-9J6">
+                                <rect key="frame" x="25" y="39" width="269" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dR-VC-8T9">
+                                <rect key="frame" x="10" y="83" width="100" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" backgroundImage="cardFuchi.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tap1" destination="E8t-Cc-tZ2" eventType="touchUpInside" id="kVR-2y-Xz4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="あなた" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sm9-YK-B0S">
+                                <rect key="frame" x="49" y="53" width="51" height="21"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="COM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ut-cL-Mbm">
+                                <rect key="frame" x="230" y="53" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5p-EF-Kj2">
+                                <rect key="frame" x="0.0" y="11" width="77" height="27"/>
+                                <color key="backgroundColor" red="0.00071137824410000001" green="0.55760679849999994" blue="0.017266727579999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="15"/>
+                                <state key="normal" title="◁終わる">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapEndGame" destination="E8t-Cc-tZ2" eventType="touchUpInside" id="Hau-BJ-dvm"/>
+                                    <segue destination="TCf-WB-rKq" kind="modal" modalTransitionStyle="flipHorizontal" id="g8Y-X0-XHu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vy6-qY-dU8">
+                                <rect key="frame" x="103" y="392" width="113" height="37"/>
+                                <color key="backgroundColor" red="0.00071137824410000001" green="0.55760679849999994" blue="0.017266727579999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="22"/>
+                                <state key="normal" title="もう1回" backgroundImage="standardbutton.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapMokkai" destination="E8t-Cc-tZ2" eventType="touchUpInside" id="POI-cX-nyU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.00071137824410000001" green="0.55760679849999994" blue="0.017266727579999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="lab" destination="zXo-Ua-pGV" id="gBx-D4-zKw"/>
+                        <outlet property="lab1" destination="4T8-jA-6jw" id="hVD-4f-kYM"/>
+                        <outlet property="lab2" destination="y2h-Us-Nuo" id="ilE-0V-My2"/>
+                        <outlet property="lab3" destination="WuH-M7-MJ8" id="A8U-0j-5Cc"/>
+                        <outlet property="lab4" destination="cbY-0e-9Ds" id="2Ik-Iy-RE6"/>
+                        <outlet property="lab5" destination="lq9-fj-etq" id="rFE-Wx-Fm7"/>
+                        <outlet property="lab6" destination="EJR-3E-cBB" id="1dw-03-jt9"/>
+                        <outlet property="lab7" destination="c1D-O9-HEB" id="Llv-aR-IVS"/>
+                        <outlet property="lab8" destination="OsE-94-9Pv" id="1bL-qi-0IX"/>
+                        <outlet property="lab9" destination="bNW-Jv-vJ0" id="ZjC-ls-Cp7"/>
+                        <outlet property="mokkaiButton" destination="Vy6-qY-dU8" id="JXm-sp-ILU"/>
+                        <outlet property="scoreLab" destination="XAm-UC-9J6" id="ulm-Wu-hMw"/>
+                        <outlet property="winsLab" destination="Fse-RG-tVv" id="UwY-cm-XmO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LjZ-M0-8Ef" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1284" y="140"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cardFuchi.png" width="50" height="70"/>
+        <image name="notification.png" width="300" height="300"/>
+        <image name="p2button.png" width="2000" height="500"/>
+        <image name="player1button.png" width="2000" height="500"/>
+        <image name="standardbutton.png" width="2000" height="500"/>
+        <image name="titleMarubatsuPattern6.png" width="2750" height="1800"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="mqM-pt-tBn"/>
+    </inferredMetricsTieBreakers>
+</document>
