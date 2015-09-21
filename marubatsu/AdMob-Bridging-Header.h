@@ -9,7 +9,7 @@
 #ifndef marubatsu_AdMob_Bridging_Header_h
 #define marubatsu_AdMob_Bridging_Header_h
 
-#import "GoogleMobileAds/GADBannerView.h"
+#import "GoogleMobileAds/GADBannerView.h
 #import "GoogleMobileAds/GADInterstitial.h"
 
 #endif

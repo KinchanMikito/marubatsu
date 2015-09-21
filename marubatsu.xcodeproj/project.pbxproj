@@ -28,13 +28,10 @@
 		EA422C581B47B3ED0008C87E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C571B47B3ED0008C87E /* MessageUI.framework */; };
 		EA422C5C1B47B4070008C87E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C5B1B47B4070008C87E /* SystemConfiguration.framework */; };
 		EA422C5E1B47B4E90008C87E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA422C5D1B47B4E90008C87E /* HomeViewController.swift */; };
-		EA422C611B47B9D10008C87E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA422C601B47B9D10008C87E /* GoogleMobileAds.framework */; };
 		EA64132B1BAE771400D34B70 /* school_kokubankeshi.png in Resources */ = {isa = PBXBuildFile; fileRef = EA64132A1BAE771400D34B70 /* school_kokubankeshi.png */; };
 		EA64132D1BAE7C5100D34B70 /* kokubankeshi.png in Resources */ = {isa = PBXBuildFile; fileRef = EA64132C1BAE7C5100D34B70 /* kokubankeshi.png */; };
 		EA6413321BAE7EC600D34B70 /* titleMarubbatsu.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6413311BAE7EC600D34B70 /* titleMarubbatsu.png */; };
-		EA6D061D1BAEF9CD003868B6 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6D06161BAEF9CD003868B6 /* GoogleMobileAds.framework */; settings = {ASSET_TAGS = (); }; };
-		EA6D061E1BAEF9CD003868B6 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = EA6D061B1BAEF9CD003868B6 /* README.txt */; settings = {ASSET_TAGS = (); }; };
-		EA6D061F1BAEF9CD003868B6 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = EA6D061C1BAEF9CD003868B6 /* README.txt */; settings = {ASSET_TAGS = (); }; };
+		EA6CA5481BB04BFC000EA920 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6CA5471BB04BFC000EA920 /* GoogleMobileAds.framework */; };
 		EA6FE7DA1B58DF2000D09C82 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6FE7D91B58DF2000D09C82 /* StoreKit.framework */; };
 		EA79BFF61B3D0586002CBAFF /* vsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA79BFF51B3D0586002CBAFF /* vsViewController.swift */; };
 		EAAEB51F1BA4340C009BA7B5 /* shareontwitter.png in Resources */ = {isa = PBXBuildFile; fileRef = EAAEB51E1BA4340C009BA7B5 /* shareontwitter.png */; };
@@ -85,17 +82,11 @@
 		EA422C5B1B47B4070008C87E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		EA422C5D1B47B4E90008C87E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EA422C5F1B47B6980008C87E /* AdMob-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AdMob-Bridging-Header.h"; sourceTree = "<group>"; };
-		EA422C601B47B9D10008C87E /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		EA64132A1BAE771400D34B70 /* school_kokubankeshi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = school_kokubankeshi.png; sourceTree = "<group>"; };
 		EA64132C1BAE7C5100D34B70 /* kokubankeshi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kokubankeshi.png; sourceTree = "<group>"; };
 		EA64132E1BAE7D0000D34B70 /* KodomoRounded-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KodomoRounded-Light.otf"; sourceTree = "<group>"; };
 		EA6413311BAE7EC600D34B70 /* titleMarubbatsu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleMarubbatsu.png; sourceTree = "<group>"; };
-		EA6D06161BAEF9CD003868B6 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
-		EA6D06181BAEF9CD003868B6 /* GADMAdNetworkAdapterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADMAdNetworkAdapterProtocol.h; sourceTree = "<group>"; };
-		EA6D06191BAEF9CD003868B6 /* GADMAdNetworkConnectorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADMAdNetworkConnectorProtocol.h; sourceTree = "<group>"; };
-		EA6D061A1BAEF9CD003868B6 /* GADMEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADMEnums.h; sourceTree = "<group>"; };
-		EA6D061B1BAEF9CD003868B6 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
-		EA6D061C1BAEF9CD003868B6 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		EA6CA5471BB04BFC000EA920 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		EA6FE7D91B58DF2000D09C82 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EA79BFF51B3D0586002CBAFF /* vsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = vsViewController.swift; sourceTree = "<group>"; };
 		EAAEB51E1BA4340C009BA7B5 /* shareontwitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shareontwitter.png; sourceTree = "<group>"; };
@@ -116,12 +107,11 @@
 			files = (
 				EA422C5C1B47B4070008C87E /* SystemConfiguration.framework in Frameworks */,
 				EA22C5351BA3FE1F008CFA45 /* Social.framework in Frameworks */,
-				EA6D061D1BAEF9CD003868B6 /* GoogleMobileAds.framework in Frameworks */,
 				EA422C581B47B3ED0008C87E /* MessageUI.framework in Frameworks */,
-				EA422C611B47B9D10008C87E /* GoogleMobileAds.framework in Frameworks */,
 				EA422C561B47B3E20008C87E /* EventKitUI.framework in Frameworks */,
 				EA422C541B47B3D70008C87E /* EventKit.framework in Frameworks */,
 				EA422C521B47B3C90008C87E /* CoreTelephony.framework in Frameworks */,
+				EA6CA5481BB04BFC000EA920 /* GoogleMobileAds.framework in Frameworks */,
 				EA422C501B47B3B50008C87E /* CoreGraphics.framework in Frameworks */,
 				EA422C4E1B47B3A70008C87E /* AVFoundation.framework in Frameworks */,
 				EA422C4C1B47B39B0008C87E /* AudioToolbox.framework in Frameworks */,
@@ -143,9 +133,9 @@
 		EA1290C11B0F5AD700C95C12 = {
 			isa = PBXGroup;
 			children = (
+				EA6CA5471BB04BFC000EA920 /* GoogleMobileAds.framework */,
 				EA22C5341BA3FE1F008CFA45 /* Social.framework */,
 				EA6FE7D91B58DF2000D09C82 /* StoreKit.framework */,
-				EA422C601B47B9D10008C87E /* GoogleMobileAds.framework */,
 				EA422C5B1B47B4070008C87E /* SystemConfiguration.framework */,
 				EA422C571B47B3ED0008C87E /* MessageUI.framework */,
 				EA422C551B47B3E20008C87E /* EventKitUI.framework */,
@@ -173,7 +163,6 @@
 		EA1290CC1B0F5AD700C95C12 /* marubatsu */ = {
 			isa = PBXGroup;
 			children = (
-				EA6D06151BAEF9CD003868B6 /* GoogleMobileAdsSdkiOS-7.3.1 */,
 				EA1290CF1B0F5AD700C95C12 /* AppDelegate.swift */,
 				EA422C5D1B47B4E90008C87E /* HomeViewController.swift */,
 				EAE1BFDE1B353FD20059DFFD /* RankingViewController.swift */,
@@ -229,27 +218,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		EA6D06151BAEF9CD003868B6 /* GoogleMobileAdsSdkiOS-7.3.1 */ = {
-			isa = PBXGroup;
-			children = (
-				EA6D06161BAEF9CD003868B6 /* GoogleMobileAds.framework */,
-				EA6D06171BAEF9CD003868B6 /* Mediation Adapters */,
-				EA6D061C1BAEF9CD003868B6 /* README.txt */,
-			);
-			path = "GoogleMobileAdsSdkiOS-7.3.1";
-			sourceTree = "<group>";
-		};
-		EA6D06171BAEF9CD003868B6 /* Mediation Adapters */ = {
-			isa = PBXGroup;
-			children = (
-				EA6D06181BAEF9CD003868B6 /* GADMAdNetworkAdapterProtocol.h */,
-				EA6D06191BAEF9CD003868B6 /* GADMAdNetworkConnectorProtocol.h */,
-				EA6D061A1BAEF9CD003868B6 /* GADMEnums.h */,
-				EA6D061B1BAEF9CD003868B6 /* README.txt */,
-			);
-			path = "Mediation Adapters";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -296,7 +264,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Mikito Kanamori";
 				TargetAttributes = {
 					EA1290C91B0F5AD700C95C12 = {
@@ -352,10 +320,8 @@
 				EAAEB51F1BA4340C009BA7B5 /* shareontwitter.png in Resources */,
 				EA1290D71B0F5AD700C95C12 /* Images.xcassets in Resources */,
 				EAC449EB1BAE5C49002DB943 /* chalk2.png in Resources */,
-				EA6D061F1BAEF9CD003868B6 /* README.txt in Resources */,
 				EA11FA891BA5A63C008838CE /* p2button.png in Resources */,
 				EAC449ED1BAE5C8E002DB943 /* chalk3.png in Resources */,
-				EA6D061E1BAEF9CD003868B6 /* README.txt in Resources */,
 				EA6413321BAE7EC600D34B70 /* titleMarubbatsu.png in Resources */,
 				EA64132B1BAE771400D34B70 /* school_kokubankeshi.png in Resources */,
 			);
@@ -441,6 +407,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -459,6 +426,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/AdMob-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -494,6 +462,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/AdMob-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -510,6 +479,7 @@
 					"/Users/kanamorimikito/Desktop/GoogleMobileAdsSdkiOS-7.3.1",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/marubatsu/GoogleMobileAdsSdkiOS-7.3.1",
+					"$(PROJECT_DIR)/marubatsu",
 				);
 				INFOPLIST_FILE = marubatsu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -520,6 +490,7 @@
 					"$(PROJECT_DIR)/marubatsu/GoogleAnalyticsServicesiOS_3.13",
 				);
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = marubatsu.mikito.first;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/AdMob-Bridging-Header.h";
@@ -538,6 +509,7 @@
 					"/Users/kanamorimikito/Desktop/GoogleMobileAdsSdkiOS-7.3.1",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/marubatsu/GoogleMobileAdsSdkiOS-7.3.1",
+					"$(PROJECT_DIR)/marubatsu",
 				);
 				INFOPLIST_FILE = marubatsu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -548,6 +520,7 @@
 					"$(PROJECT_DIR)/marubatsu/GoogleAnalyticsServicesiOS_3.13",
 				);
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = marubatsu.mikito.first;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/AdMob-Bridging-Header.h";
@@ -568,6 +541,7 @@
 				);
 				INFOPLIST_FILE = marubatsuTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mikito.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/marubatsu.app/marubatsu";
 			};
@@ -583,6 +557,7 @@
 				);
 				INFOPLIST_FILE = marubatsuTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mikito.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/marubatsu.app/marubatsu";
 			};

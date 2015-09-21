@@ -64,7 +64,8 @@ class RankingViewController: UIViewController {
             label4.text = String("4:\(hard4)連勝")
             label5.text = String("5:\(hard5)連勝")
         default:
-            print("Error")
+            break
+            
         }
         
     }

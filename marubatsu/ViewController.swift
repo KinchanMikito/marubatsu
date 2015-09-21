@@ -380,7 +380,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
         
         mokkai()
         
-        if let isReady = _interstitial?.isReady {
+        if let _ = _interstitial?.isReady {
             _interstitial?.presentFromRootViewController(self)
         }
         
@@ -837,7 +837,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
         for var i = 0; i < 3; i++ {
             
             if CPUArray[1] == i*3 && myArray[0] == i*3+1 && squares[i*3+2] == nil && lastNum != i*3+2 && maruLast != i*3+2{
-                print("1")
+                print("1", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -845,7 +845,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
                 return i*3+2
             }
             if CPUArray[1] == i*3 && myArray[0] == i*3+2 && squares[i*3+1] == nil && lastNum != i*3+1 && maruLast != i*3+1{
-                print("2")
+                print("2", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -853,7 +853,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
                 return i*3+1
             }
             if CPUArray[1] == i*3+1 && myArray[0] == i*3 && squares[i*3+2] == nil && lastNum != i*3+2 && maruLast != i*3+2{
-                print("3")
+                print("3", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -861,7 +861,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
                 return i*3+2
             }
             if CPUArray[1] == i*3+2 && myArray[0] == i*3 && squares[i*3+1] == nil && lastNum != i*3+1 && maruLast != i*3+1{
-                print("4")
+                print("4", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -869,7 +869,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
                 return i*3+1
             }
             if CPUArray[1] == i*3+2 && myArray[0] == i*3+1 && squares[i*3] == nil && lastNum != i*3 && maruLast != i*3{
-                print("5")
+                print("5", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -877,7 +877,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
                 return i*3
             }
             if CPUArray[1] == i*3+1 && myArray[0] == i*3+2 && squares[i*3] == nil && lastNum != i*3 && maruLast != i*3{
-                print("6")
+                print("6", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -888,7 +888,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
             
             
             if CPUArray[1] == i && myArray[0] == i+3 && squares[i+6] == nil && lastNum != i+6 && maruLast != i+6{
-                print("7")
+                print("7", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -896,7 +896,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
                 return i+6
             }
             if CPUArray[1] == i && myArray[0] == i+6 && squares[i+3] == nil && lastNum != i+3 && maruLast != i+3{
-                print("8")
+                print("8", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -904,7 +904,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
                 return i+3
             }
             if CPUArray[1] == i+3 && myArray[0] == i && squares[i+6] == nil && lastNum != i+6 && maruLast != i+6{
-                print("9")
+                print("9", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -912,7 +912,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
                 return i+6
             }
             if CPUArray[1] == i+6 && myArray[0] == i && squares[i+3] == nil && lastNum != i+3 && maruLast != i+3{
-                print("10")
+                print("10", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -920,7 +920,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
                 return i+3
             }
             if CPUArray[1] == i+6 && myArray[0] == i+3 && squares[i] == nil && lastNum != i && maruLast != i{
-                print("11")
+                print("11", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -928,7 +928,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
                 return i
             }
             if CPUArray[1] == i+3 && myArray[0] == i+6 && squares[i] == nil && lastNum != i && maruLast != i{
-                print("12")
+                print("12", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -939,7 +939,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
             
             
             if CPUArray[1] == 0 && myArray[0] == 4 && squares[8] == nil && lastNum != 8 && maruLast != 8{
-                print("13")
+                print("13", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -947,7 +947,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
                 return 8
             }
             if CPUArray[1] == 0 && myArray[0] == 8 && squares[4] == nil && lastNum != 4 && maruLast != 4{
-                print("14")
+                print("14", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -955,7 +955,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
                 return 4
             }
             if CPUArray[1] == 4 && myArray[0] == 0 && squares[8] == nil && lastNum != 8 && maruLast != 8{
-                print("15")
+                print("15", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -963,7 +963,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
                 return 8
             }
             if CPUArray[1] == 8 && myArray[0] == 0 && squares[4] == nil && lastNum != 4 && maruLast != 4{
-                print("16")
+                print("16", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -971,7 +971,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
                 return 4
             }
             if CPUArray[1] == 8 && myArray[0] == 4 && squares[0] == nil && lastNum != 0 && maruLast != 0{
-                print("17")
+                print("17", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -979,7 +979,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
                 return 0
             }
             if CPUArray[1] == 4 && myArray[0] == 8 && squares[0] == nil && lastNum != 0 && maruLast != 0{
-                print("18")
+                print("18", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -990,7 +990,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
             
             
             if CPUArray[1] == 2 && myArray[0] == 4 && squares[6] == nil && lastNum != 6 && maruLast != 6{
-                print("19")
+                print("19", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -998,7 +998,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
                 return 6
             }
             if CPUArray[1] == 2 && myArray[0] == 6 && squares[4] == nil && lastNum != 4 && maruLast != 4{
-                print("20")
+                print("20", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -1006,7 +1006,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
                 return 4
             }
             if CPUArray[1] == 4 && myArray[0] == 2 && squares[6] == nil && lastNum != 6 && maruLast != 6{
-                print("21")
+                print("21", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -1014,7 +1014,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
                 return 6
             }
             if CPUArray[1] == 6 && myArray[0] == 2 && squares[4] == nil && lastNum != 4 && maruLast != 4{
-                print("22")
+                print("22", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -1022,7 +1022,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
                 return 4
             }
             if CPUArray[1] == 6 && myArray[0] == 4 && squares[2] == nil && lastNum != 2 && maruLast != 2{
-                print("23")
+                print("23", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true
@@ -1030,7 +1030,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitialDe
                 return 2
             }
             if CPUArray[1] == 4 && myArray[0] == 6 && squares[2] == nil && lastNum != 2 && maruLast != 2{
-                print("24")
+                print("24", terminator: "")
                 myArray[2] = maruLast
                 if myArray[2] != 100{
                     squares[myArray[2]] = true

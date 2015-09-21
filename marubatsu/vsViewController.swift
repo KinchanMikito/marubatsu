@@ -472,7 +472,7 @@ class vsViewController: UIViewController ,GADBannerViewDelegate ,GADInterstitial
     @IBAction func tapMokkai(){
         mokkai()
         
-        if let isReady = _interstitial?.isReady {
+        if let _ = _interstitial?.isReady {
             _interstitial?.presentFromRootViewController(self)
         }
         
